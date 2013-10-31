@@ -1,0 +1,34 @@
+# Xcode
+.DS_Store
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+*.xcworkspace
+!default.xcworkspace
+xcuserdata
+profile
+*.moved-aside
+DerivedData
+.idea/
+
+# add by Lee
+report/
+Pods/
+
+# bundle
+bin/
+.bundle/
+vendor/gems
+
+# python
+vendor/checker-274/Reporter.pyc
+vendor/checker-274/ScanView.pyc
+
+# track DiaryRoyale/ViewControllers/Profile
+!DiaryRoyale/ViewControllers/Profile
