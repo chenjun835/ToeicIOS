@@ -19,6 +19,7 @@ DerivedData
 
 report/
 Pods/
+Podfile.lock
 
 # bundle
 bin/
