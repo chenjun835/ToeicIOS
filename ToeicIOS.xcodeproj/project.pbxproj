@@ -49,6 +49,9 @@
 		77A8DD5D1822559500B41F09 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A8DD5B1822558000B41F09 /* libsqlite3.0.dylib */; };
 		77A8DD5F1822575200B41F09 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A8DD5E1822575200B41F09 /* Parse.framework */; };
 		77A8DD601822575200B41F09 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A8DD5E1822575200B41F09 /* Parse.framework */; };
+		77A8DD6818225E3200B41F09 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 776C22DD18223417000A1227 /* InfoPlist.strings */; };
+		77A8DD7118225EDB00B41F09 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 77A8DD7418225EDB00B41F09 /* Localizable.strings */; };
+		77A8DD7218225EDB00B41F09 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 77A8DD7418225EDB00B41F09 /* Localizable.strings */; };
 		EE133DA3AF7D483E9B2AB81B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 297D6E0BA9464CE2A86D35A5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +102,24 @@
 		776C232A182250BF000A1227 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		77A8DD5B1822558000B41F09 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		77A8DD5E1822575200B41F09 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		77A8DD6118225D8F00B41F09 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		77A8DD6218225D8F00B41F09 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		77A8DD6318225D8F00B41F09 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main_iPad.strings; sourceTree = "<group>"; };
+		77A8DD6418225D8F00B41F09 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		77A8DD6918225E7900B41F09 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main_iPhone.strings"; sourceTree = "<group>"; };
+		77A8DD6A18225E7900B41F09 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main_iPad.strings"; sourceTree = "<group>"; };
+		77A8DD6B18225E7900B41F09 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		77A8DD6C18225E7900B41F09 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		77A8DD6D18225E9300B41F09 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main_iPhone.strings"; sourceTree = "<group>"; };
+		77A8DD6E18225E9300B41F09 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main_iPad.strings"; sourceTree = "<group>"; };
+		77A8DD6F18225E9300B41F09 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		77A8DD7018225E9300B41F09 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		77A8DD7318225EDB00B41F09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		77A8DD7518225EE100B41F09 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		77A8DD7618225EE200B41F09 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		77A8DD7718225EE700B41F09 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		77A8DD7818225EE800B41F09 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		77A8DD7918225EFB00B41F09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9E4B81355E064B879D6B4DF1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -219,6 +240,7 @@
 			children = (
 				776C22DC18223417000A1227 /* ToeicIOS-Info.plist */,
 				776C22DD18223417000A1227 /* InfoPlist.strings */,
+				77A8DD7418225EDB00B41F09 /* Localizable.strings */,
 				776C22E018223417000A1227 /* main.m */,
 				776C22E218223417000A1227 /* ToeicIOS-Prefix.pch */,
 			);
@@ -305,6 +327,9 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 776C22C618223417000A1227;
 			productRefGroup = 776C22D018223417000A1227 /* Products */;
@@ -322,6 +347,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77A8DD7118225EDB00B41F09 /* Localizable.strings in Resources */,
 				776C22EB18223417000A1227 /* Main_iPad.storyboard in Resources */,
 				776C22F618223417000A1227 /* Images.xcassets in Resources */,
 				776C22E818223417000A1227 /* Main_iPhone.storyboard in Resources */,
@@ -334,6 +360,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				776C230818223417000A1227 /* InfoPlist.strings in Resources */,
+				77A8DD6818225E3200B41F09 /* InfoPlist.strings in Resources */,
+				77A8DD7218225EDB00B41F09 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +436,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				776C22DE18223417000A1227 /* en */,
+				77A8DD6118225D8F00B41F09 /* ja */,
+				77A8DD6B18225E7900B41F09 /* zh-Hans */,
+				77A8DD6F18225E9300B41F09 /* zh-Hant */,
+				77A8DD7918225EFB00B41F09 /* Base */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -416,6 +448,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				776C22E718223417000A1227 /* Base */,
+				77A8DD6218225D8F00B41F09 /* ja */,
+				77A8DD6918225E7900B41F09 /* zh-Hans */,
+				77A8DD6D18225E9300B41F09 /* zh-Hant */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -424,6 +459,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				776C22EA18223417000A1227 /* Base */,
+				77A8DD6318225D8F00B41F09 /* ja */,
+				77A8DD6A18225E7900B41F09 /* zh-Hans */,
+				77A8DD6E18225E9300B41F09 /* zh-Hant */,
 			);
 			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
@@ -432,8 +470,23 @@
 			isa = PBXVariantGroup;
 			children = (
 				776C230718223417000A1227 /* en */,
+				77A8DD6418225D8F00B41F09 /* ja */,
+				77A8DD6C18225E7900B41F09 /* zh-Hans */,
+				77A8DD7018225E9300B41F09 /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		77A8DD7418225EDB00B41F09 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77A8DD7318225EDB00B41F09 /* Base */,
+				77A8DD7518225EE100B41F09 /* en */,
+				77A8DD7618225EE200B41F09 /* ja */,
+				77A8DD7718225EE700B41F09 /* zh-Hans */,
+				77A8DD7818225EE800B41F09 /* zh-Hant */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

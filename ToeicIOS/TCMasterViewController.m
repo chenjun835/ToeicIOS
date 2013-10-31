@@ -74,7 +74,7 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    cell.textLabel.text = NSLocalizedString(@"grammer practice", nil);
+    cell.textLabel.text = NSLocalizedString(@"Grammer practice", nil);
 }
 
 @end
