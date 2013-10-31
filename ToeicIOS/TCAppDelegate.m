@@ -7,7 +7,7 @@
 //
 
 #import "TCAppDelegate.h"
-
+#import <Parse/Parse.h>
 #import "TCMasterViewController.h"
 
 @implementation TCAppDelegate
@@ -18,6 +18,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [Parse setApplicationId:@"teKBUtsKIayWc3H9OYv77SIHSujiPZZQNRluCF6w"
+                  clientKey:@"TQYBAAEEqnuuuTJhOd46oXeFuErQGKhkrhpWbkAl"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
