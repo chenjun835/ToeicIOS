@@ -10,13 +10,8 @@
 
 @class TCDetailViewController;
 
-#import <CoreData/CoreData.h>
-
-@interface TCMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface TCMasterViewController : UITableViewController
 
 @property (strong, nonatomic) TCDetailViewController *detailViewController;
-
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
