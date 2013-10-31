@@ -1,24 +1,22 @@
 //
-//  TCCategoryListModel.m
+//  TCQuestionListModel.m
 //  ToeicIOS
 //
 //  Created by 陳 俊 on 2013/10/31.
 //  Copyright (c) 2013年 陳 俊. All rights reserved.
 //
 
-#import "TCCategoryListModel.h"
-#import "TCCategory.h"
+#import "TCQuestionListModel.h"
+#import "TCQuestion.h"
 
-@implementation TCCategoryListModel
+@implementation TCQuestionListModel
 
-+ (TCCategoryListModel *)sharedModel {
-    static TCCategoryListModel *model;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        model = [[TCCategoryListModel alloc] init];
-    });
-    
-    return model;
+- (id)initWithCategoryId:(NSString *)categoryId {
+    self = [self init];
+    if (self) {
+        _categoryId = categoryId;
+    }
+    return self;
 }
 
 - (void)loadWithLimit:(NSInteger)limit didLoadBlock:(didLoadBlock_t)didLoadBlock {
@@ -29,11 +27,11 @@
 }
 
 - (void)loadMoreWithDidLoadBlock:(didLoadBlock_t)didLoadBlock {
-    PFQuery *query = [PFQuery queryWithClassName:@"Category"];
+    PFQuery *query = [PFQuery queryWithClassName:@"Question"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             for (PFObject *obj in objects) {
-                [self.list addObject:[[TCCategory alloc] initWithPFObject:obj]];
+                [self.list addObject:[[TCQuestion alloc] initWithPFObject:obj]];
             }
         }
         else {

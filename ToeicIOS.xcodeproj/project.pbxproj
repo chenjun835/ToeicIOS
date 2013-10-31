@@ -58,6 +58,10 @@
 		77A8DD821822642800B41F09 /* TCCategoryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A8DD801822642800B41F09 /* TCCategoryListModel.m */; };
 		77A8DD851822660100B41F09 /* TCCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A8DD841822660100B41F09 /* TCCategory.m */; };
 		77A8DD861822660100B41F09 /* TCCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A8DD841822660100B41F09 /* TCCategory.m */; };
+		77A8DD8918227F5A00B41F09 /* TCQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A8DD8818227F5A00B41F09 /* TCQuestion.m */; };
+		77A8DD8A18227F5A00B41F09 /* TCQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A8DD8818227F5A00B41F09 /* TCQuestion.m */; };
+		77A8DD8D1822816800B41F09 /* TCQuestionListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A8DD8C1822816800B41F09 /* TCQuestionListModel.m */; };
+		77A8DD8E1822816800B41F09 /* TCQuestionListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A8DD8C1822816800B41F09 /* TCQuestionListModel.m */; };
 		EE133DA3AF7D483E9B2AB81B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 297D6E0BA9464CE2A86D35A5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +136,10 @@
 		77A8DD801822642800B41F09 /* TCCategoryListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCCategoryListModel.m; sourceTree = "<group>"; };
 		77A8DD831822660100B41F09 /* TCCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCCategory.h; sourceTree = "<group>"; };
 		77A8DD841822660100B41F09 /* TCCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCCategory.m; sourceTree = "<group>"; };
+		77A8DD8718227F5A00B41F09 /* TCQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCQuestion.h; sourceTree = "<group>"; };
+		77A8DD8818227F5A00B41F09 /* TCQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCQuestion.m; sourceTree = "<group>"; };
+		77A8DD8B1822816800B41F09 /* TCQuestionListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCQuestionListModel.h; sourceTree = "<group>"; };
+		77A8DD8C1822816800B41F09 /* TCQuestionListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCQuestionListModel.m; sourceTree = "<group>"; };
 		9E4B81355E064B879D6B4DF1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -233,14 +241,11 @@
 			isa = PBXGroup;
 			children = (
 				77A8DD7A182260C900B41F09 /* Models */,
+				77A8DD8F182282F300B41F09 /* Controllers */,
 				776C22E318223417000A1227 /* TCAppDelegate.h */,
 				776C22E418223417000A1227 /* TCAppDelegate.m */,
 				776C22E618223417000A1227 /* Main_iPhone.storyboard */,
 				776C22E918223417000A1227 /* Main_iPad.storyboard */,
-				776C22EF18223417000A1227 /* TCMasterViewController.h */,
-				776C22F018223417000A1227 /* TCMasterViewController.m */,
-				776C22F218223417000A1227 /* TCDetailViewController.h */,
-				776C22F318223417000A1227 /* TCDetailViewController.m */,
 				776C22F518223417000A1227 /* Images.xcassets */,
 				776C22EC18223417000A1227 /* ToeicIOS.xcdatamodeld */,
 				776C22DB18223417000A1227 /* Supporting Files */,
@@ -285,10 +290,25 @@
 				77A8DD7C182262C600B41F09 /* TCListModel.m */,
 				77A8DD7F1822642800B41F09 /* TCCategoryListModel.h */,
 				77A8DD801822642800B41F09 /* TCCategoryListModel.m */,
+				77A8DD8B1822816800B41F09 /* TCQuestionListModel.h */,
+				77A8DD8C1822816800B41F09 /* TCQuestionListModel.m */,
 				77A8DD831822660100B41F09 /* TCCategory.h */,
 				77A8DD841822660100B41F09 /* TCCategory.m */,
+				77A8DD8718227F5A00B41F09 /* TCQuestion.h */,
+				77A8DD8818227F5A00B41F09 /* TCQuestion.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		77A8DD8F182282F300B41F09 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				776C22EF18223417000A1227 /* TCMasterViewController.h */,
+				776C22F018223417000A1227 /* TCMasterViewController.m */,
+				776C22F218223417000A1227 /* TCDetailViewController.h */,
+				776C22F318223417000A1227 /* TCDetailViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,10 +455,12 @@
 				77A8DD811822642800B41F09 /* TCCategoryListModel.m in Sources */,
 				776C22F418223417000A1227 /* TCDetailViewController.m in Sources */,
 				77A8DD7D182262C600B41F09 /* TCListModel.m in Sources */,
+				77A8DD8D1822816800B41F09 /* TCQuestionListModel.m in Sources */,
 				77A8DD851822660100B41F09 /* TCCategory.m in Sources */,
 				776C22F118223417000A1227 /* TCMasterViewController.m in Sources */,
 				776C22E518223417000A1227 /* TCAppDelegate.m in Sources */,
 				776C22EE18223417000A1227 /* ToeicIOS.xcdatamodeld in Sources */,
+				77A8DD8918227F5A00B41F09 /* TCQuestion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,7 +468,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77A8DD8A18227F5A00B41F09 /* TCQuestion.m in Sources */,
 				77A8DD861822660100B41F09 /* TCCategory.m in Sources */,
+				77A8DD8E1822816800B41F09 /* TCQuestionListModel.m in Sources */,
 				77A8DD7E182262C600B41F09 /* TCListModel.m in Sources */,
 				776C230A18223417000A1227 /* ToeicIOSTests.m in Sources */,
 				77A8DD821822642800B41F09 /* TCCategoryListModel.m in Sources */,

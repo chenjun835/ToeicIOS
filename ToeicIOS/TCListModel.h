@@ -9,6 +9,7 @@
 #define kDefaultListLimit 20
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
 typedef void (^didLoadBlock_t)(NSError *error);
 

@@ -68,7 +68,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        self.detailViewController.detailItem = nil;
+        self.detailViewController.category = _model.list[indexPath.row];
     }
 }
 
@@ -76,8 +76,8 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = nil;
-        [[segue destinationViewController] setDetailItem:object];
+        TCCategory *category = _model.list[indexPath.row];
+        [[segue destinationViewController] setCategory:category];
     }
 }
 

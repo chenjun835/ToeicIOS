@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TCCategory.h"
 
 @interface TCDetailViewController : UIViewController <UISplitViewControllerDelegate>
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) TCCategory *category;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @end
