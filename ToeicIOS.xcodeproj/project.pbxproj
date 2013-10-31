@@ -52,6 +52,12 @@
 		77A8DD6818225E3200B41F09 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 776C22DD18223417000A1227 /* InfoPlist.strings */; };
 		77A8DD7118225EDB00B41F09 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 77A8DD7418225EDB00B41F09 /* Localizable.strings */; };
 		77A8DD7218225EDB00B41F09 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 77A8DD7418225EDB00B41F09 /* Localizable.strings */; };
+		77A8DD7D182262C600B41F09 /* TCListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A8DD7C182262C600B41F09 /* TCListModel.m */; };
+		77A8DD7E182262C600B41F09 /* TCListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A8DD7C182262C600B41F09 /* TCListModel.m */; };
+		77A8DD811822642800B41F09 /* TCCategoryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A8DD801822642800B41F09 /* TCCategoryListModel.m */; };
+		77A8DD821822642800B41F09 /* TCCategoryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A8DD801822642800B41F09 /* TCCategoryListModel.m */; };
+		77A8DD851822660100B41F09 /* TCCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A8DD841822660100B41F09 /* TCCategory.m */; };
+		77A8DD861822660100B41F09 /* TCCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A8DD841822660100B41F09 /* TCCategory.m */; };
 		EE133DA3AF7D483E9B2AB81B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 297D6E0BA9464CE2A86D35A5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +126,12 @@
 		77A8DD7718225EE700B41F09 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		77A8DD7818225EE800B41F09 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		77A8DD7918225EFB00B41F09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		77A8DD7B182262C600B41F09 /* TCListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCListModel.h; sourceTree = "<group>"; };
+		77A8DD7C182262C600B41F09 /* TCListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCListModel.m; sourceTree = "<group>"; };
+		77A8DD7F1822642800B41F09 /* TCCategoryListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCCategoryListModel.h; sourceTree = "<group>"; };
+		77A8DD801822642800B41F09 /* TCCategoryListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCCategoryListModel.m; sourceTree = "<group>"; };
+		77A8DD831822660100B41F09 /* TCCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCCategory.h; sourceTree = "<group>"; };
+		77A8DD841822660100B41F09 /* TCCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCCategory.m; sourceTree = "<group>"; };
 		9E4B81355E064B879D6B4DF1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -220,6 +232,7 @@
 		776C22DA18223417000A1227 /* ToeicIOS */ = {
 			isa = PBXGroup;
 			children = (
+				77A8DD7A182260C900B41F09 /* Models */,
 				776C22E318223417000A1227 /* TCAppDelegate.h */,
 				776C22E418223417000A1227 /* TCAppDelegate.m */,
 				776C22E618223417000A1227 /* Main_iPhone.storyboard */,
@@ -263,6 +276,19 @@
 				776C230618223417000A1227 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		77A8DD7A182260C900B41F09 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				77A8DD7B182262C600B41F09 /* TCListModel.h */,
+				77A8DD7C182262C600B41F09 /* TCListModel.m */,
+				77A8DD7F1822642800B41F09 /* TCCategoryListModel.h */,
+				77A8DD801822642800B41F09 /* TCCategoryListModel.m */,
+				77A8DD831822660100B41F09 /* TCCategory.h */,
+				77A8DD841822660100B41F09 /* TCCategory.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,7 +432,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				776C22E118223417000A1227 /* main.m in Sources */,
+				77A8DD811822642800B41F09 /* TCCategoryListModel.m in Sources */,
 				776C22F418223417000A1227 /* TCDetailViewController.m in Sources */,
+				77A8DD7D182262C600B41F09 /* TCListModel.m in Sources */,
+				77A8DD851822660100B41F09 /* TCCategory.m in Sources */,
 				776C22F118223417000A1227 /* TCMasterViewController.m in Sources */,
 				776C22E518223417000A1227 /* TCAppDelegate.m in Sources */,
 				776C22EE18223417000A1227 /* ToeicIOS.xcdatamodeld in Sources */,
@@ -417,7 +446,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77A8DD861822660100B41F09 /* TCCategory.m in Sources */,
+				77A8DD7E182262C600B41F09 /* TCListModel.m in Sources */,
 				776C230A18223417000A1227 /* ToeicIOSTests.m in Sources */,
+				77A8DD821822642800B41F09 /* TCCategoryListModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,10 +7,14 @@
 //
 
 #import "TCMasterViewController.h"
-
 #import "TCDetailViewController.h"
+#import "TCCategoryListModel.h"
+#import "TCCategory.h"
 
 @interface TCMasterViewController ()
+
+@property (nonatomic, strong) TCCategoryListModel *model;
+
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
@@ -29,6 +33,11 @@
 {
     [super viewDidLoad];
     self.detailViewController = (TCDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    _model = [TCCategoryListModel sharedModel];
+    [_model loadWithLimit:kDefaultListLimit didLoadBlock:^(NSError *error) {
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,7 +55,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return _model.list.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -74,7 +83,8 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    cell.textLabel.text = NSLocalizedString(@"Grammer practice", nil);
+    TCCategory *category = _model.list[indexPath.row];
+    cell.textLabel.text = category.categoryName;
 }
 
 @end
