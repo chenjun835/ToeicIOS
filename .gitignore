@@ -17,7 +17,6 @@ profile
 DerivedData
 .idea/
 
-# add by Lee
 report/
 Pods/
 
@@ -26,9 +25,3 @@ bin/
 .bundle/
 vendor/gems
 
-# python
-vendor/checker-274/Reporter.pyc
-vendor/checker-274/ScanView.pyc
-
-# track DiaryRoyale/ViewControllers/Profile
-!DiaryRoyale/ViewControllers/Profile
