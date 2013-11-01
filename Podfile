@@ -7,6 +7,7 @@ pod 'BlocksKit'
 pod 'SVProgressHUD'
 pod 'SDWebImage'
 pod 'Nimbus'
+pod 'Masonry'
 pod 'GoogleAnalytics-iOS-SDK'
 
 # The post install hook add certain compiler flags for JSONKit files so that
