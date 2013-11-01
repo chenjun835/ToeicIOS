@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TCListModel.h"
 
 @interface TCSwipViews : UIView
 
-- (id)initWithQuestionList:(NSArray *)list;
+- (id)initWithQuestionList:(TCListModel *)listModel;
 
 @end

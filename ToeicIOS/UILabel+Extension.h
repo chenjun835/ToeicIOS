@@ -12,5 +12,7 @@
 
 + (UILabel *)questionBodyLabel;
 + (UILabel *)questionOptionLabel;
++ (UILabel *)bannerDescLabel;
++ (UILabel *)highlightLabel;
 
 @end

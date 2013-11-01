@@ -20,6 +20,7 @@
         
         UILabel *questionBodyLabel = [UILabel questionBodyLabel];
         questionBodyLabel.text = question.questionBody;
+        questionBodyLabel.preferredMaxLayoutWidth = 290;
         
         TCOptionView *optionA = [[TCOptionView alloc] initWithMark:kOptionMarkA optionBody:question.optionA];
         TCOptionView *optionB = [[TCOptionView alloc] initWithMark:kOptionMarkB optionBody:question.optionB];
@@ -34,7 +35,7 @@
         
         NSDictionary *views = NSDictionaryOfVariableBindings(questionBodyLabel, optionA, optionB, optionC, optionD);
         NSDictionary *metrics = @{@"padding": @kPadding};
-        NSString *visualFormat = @"V:|-padding-[questionBodyLabel]-padding-[optionA]-padding-[optionB]-padding-[optionC]-padding-[optionD]-(>=padding)-|";
+        NSString *visualFormat = @"V:|-60-[questionBodyLabel]-padding-[optionA]-padding-[optionB]-padding-[optionC]-padding-[optionD]-(>=padding)-|";
         
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:visualFormat
                                                                      options:NSLayoutFormatAlignAllLeft|NSLayoutFormatAlignAllRight
