@@ -14,11 +14,7 @@
 		776C22DF18223417000A1227 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 776C22DD18223417000A1227 /* InfoPlist.strings */; };
 		776C22E118223417000A1227 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 776C22E018223417000A1227 /* main.m */; };
 		776C22E518223417000A1227 /* TCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 776C22E418223417000A1227 /* TCAppDelegate.m */; };
-		776C22E818223417000A1227 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 776C22E618223417000A1227 /* Main_iPhone.storyboard */; };
-		776C22EB18223417000A1227 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 776C22E918223417000A1227 /* Main_iPad.storyboard */; };
 		776C22EE18223417000A1227 /* ToeicIOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 776C22EC18223417000A1227 /* ToeicIOS.xcdatamodeld */; };
-		776C22F118223417000A1227 /* TCMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 776C22F018223417000A1227 /* TCMasterViewController.m */; };
-		776C22F418223417000A1227 /* TCDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 776C22F318223417000A1227 /* TCDetailViewController.m */; };
 		776C22F618223417000A1227 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 776C22F518223417000A1227 /* Images.xcassets */; };
 		776C22FD18223417000A1227 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 776C22FC18223417000A1227 /* XCTest.framework */; };
 		776C22FE18223417000A1227 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 776C22D218223417000A1227 /* Foundation.framework */; };
@@ -62,6 +58,10 @@
 		77A8DD8A18227F5A00B41F09 /* TCQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A8DD8818227F5A00B41F09 /* TCQuestion.m */; };
 		77A8DD8D1822816800B41F09 /* TCQuestionListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A8DD8C1822816800B41F09 /* TCQuestionListModel.m */; };
 		77A8DD8E1822816800B41F09 /* TCQuestionListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A8DD8C1822816800B41F09 /* TCQuestionListModel.m */; };
+		77B557AF1823A33800872BEE /* TCQuestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557AE1823A33800872BEE /* TCQuestionView.m */; };
+		77B557B61823A38800872BEE /* TCCategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557B41823A38800872BEE /* TCCategoryVC.m */; };
+		77B557B71823A38800872BEE /* TCQuestionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557B51823A38800872BEE /* TCQuestionVC.m */; };
+		77B557BB1823A59F00872BEE /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557BA1823A59F00872BEE /* UILabel+Extension.m */; };
 		EE133DA3AF7D483E9B2AB81B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 297D6E0BA9464CE2A86D35A5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -88,13 +88,7 @@
 		776C22E218223417000A1227 /* ToeicIOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ToeicIOS-Prefix.pch"; sourceTree = "<group>"; };
 		776C22E318223417000A1227 /* TCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCAppDelegate.h; sourceTree = "<group>"; };
 		776C22E418223417000A1227 /* TCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCAppDelegate.m; sourceTree = "<group>"; };
-		776C22E718223417000A1227 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		776C22EA18223417000A1227 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		776C22ED18223417000A1227 /* ToeicIOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToeicIOS.xcdatamodel; sourceTree = "<group>"; };
-		776C22EF18223417000A1227 /* TCMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCMasterViewController.h; sourceTree = "<group>"; };
-		776C22F018223417000A1227 /* TCMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCMasterViewController.m; sourceTree = "<group>"; };
-		776C22F218223417000A1227 /* TCDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCDetailViewController.h; sourceTree = "<group>"; };
-		776C22F318223417000A1227 /* TCDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCDetailViewController.m; sourceTree = "<group>"; };
 		776C22F518223417000A1227 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		776C22FB18223417000A1227 /* ToeicIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToeicIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		776C22FC18223417000A1227 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -113,22 +107,16 @@
 		77A8DD5B1822558000B41F09 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		77A8DD5E1822575200B41F09 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		77A8DD6118225D8F00B41F09 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		77A8DD6218225D8F00B41F09 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
-		77A8DD6318225D8F00B41F09 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main_iPad.strings; sourceTree = "<group>"; };
 		77A8DD6418225D8F00B41F09 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		77A8DD6918225E7900B41F09 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main_iPhone.strings"; sourceTree = "<group>"; };
-		77A8DD6A18225E7900B41F09 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main_iPad.strings"; sourceTree = "<group>"; };
 		77A8DD6B18225E7900B41F09 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		77A8DD6C18225E7900B41F09 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		77A8DD6D18225E9300B41F09 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main_iPhone.strings"; sourceTree = "<group>"; };
-		77A8DD6E18225E9300B41F09 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main_iPad.strings"; sourceTree = "<group>"; };
 		77A8DD6F18225E9300B41F09 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		77A8DD7018225E9300B41F09 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		77A8DD7318225EDB00B41F09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		77A8DD7518225EE100B41F09 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		77A8DD7618225EE200B41F09 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		77A8DD7718225EE700B41F09 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		77A8DD7818225EE800B41F09 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		77A8DD7318225EDB00B41F09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		77A8DD7518225EE100B41F09 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		77A8DD7618225EE200B41F09 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		77A8DD7718225EE700B41F09 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		77A8DD7818225EE800B41F09 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		77A8DD7918225EFB00B41F09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		77A8DD7B182262C600B41F09 /* TCListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCListModel.h; sourceTree = "<group>"; };
 		77A8DD7C182262C600B41F09 /* TCListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCListModel.m; sourceTree = "<group>"; };
@@ -140,6 +128,15 @@
 		77A8DD8818227F5A00B41F09 /* TCQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCQuestion.m; sourceTree = "<group>"; };
 		77A8DD8B1822816800B41F09 /* TCQuestionListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCQuestionListModel.h; sourceTree = "<group>"; };
 		77A8DD8C1822816800B41F09 /* TCQuestionListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCQuestionListModel.m; sourceTree = "<group>"; };
+		77B557AD1823A33800872BEE /* TCQuestionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCQuestionView.h; sourceTree = "<group>"; };
+		77B557AE1823A33800872BEE /* TCQuestionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCQuestionView.m; sourceTree = "<group>"; };
+		77B557B11823A36D00872BEE /* TCDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCDefines.h; sourceTree = "<group>"; };
+		77B557B21823A38800872BEE /* TCCategoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCCategoryVC.h; sourceTree = "<group>"; };
+		77B557B31823A38800872BEE /* TCQuestionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCQuestionVC.h; sourceTree = "<group>"; };
+		77B557B41823A38800872BEE /* TCCategoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCCategoryVC.m; sourceTree = "<group>"; };
+		77B557B51823A38800872BEE /* TCQuestionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCQuestionVC.m; sourceTree = "<group>"; };
+		77B557B91823A59F00872BEE /* UILabel+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
+		77B557BA1823A59F00872BEE /* UILabel+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extension.m"; sourceTree = "<group>"; };
 		9E4B81355E064B879D6B4DF1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -240,12 +237,13 @@
 		776C22DA18223417000A1227 /* ToeicIOS */ = {
 			isa = PBXGroup;
 			children = (
+				77B557B01823A35000872BEE /* Constants */,
+				77B557B81823A54400872BEE /* Extensions */,
 				77A8DD7A182260C900B41F09 /* Models */,
+				77B557AC1823A31200872BEE /* Views */,
 				77A8DD8F182282F300B41F09 /* Controllers */,
 				776C22E318223417000A1227 /* TCAppDelegate.h */,
 				776C22E418223417000A1227 /* TCAppDelegate.m */,
-				776C22E618223417000A1227 /* Main_iPhone.storyboard */,
-				776C22E918223417000A1227 /* Main_iPad.storyboard */,
 				776C22F518223417000A1227 /* Images.xcassets */,
 				776C22EC18223417000A1227 /* ToeicIOS.xcdatamodeld */,
 				776C22DB18223417000A1227 /* Supporting Files */,
@@ -303,12 +301,38 @@
 		77A8DD8F182282F300B41F09 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				776C22EF18223417000A1227 /* TCMasterViewController.h */,
-				776C22F018223417000A1227 /* TCMasterViewController.m */,
-				776C22F218223417000A1227 /* TCDetailViewController.h */,
-				776C22F318223417000A1227 /* TCDetailViewController.m */,
+				77B557B21823A38800872BEE /* TCCategoryVC.h */,
+				77B557B41823A38800872BEE /* TCCategoryVC.m */,
+				77B557B31823A38800872BEE /* TCQuestionVC.h */,
+				77B557B51823A38800872BEE /* TCQuestionVC.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		77B557AC1823A31200872BEE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				77B557AD1823A33800872BEE /* TCQuestionView.h */,
+				77B557AE1823A33800872BEE /* TCQuestionView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		77B557B01823A35000872BEE /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				77B557B11823A36D00872BEE /* TCDefines.h */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		77B557B81823A54400872BEE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				77B557B91823A59F00872BEE /* UILabel+Extension.h */,
+				77B557BA1823A59F00872BEE /* UILabel+Extension.m */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,9 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77A8DD7118225EDB00B41F09 /* Localizable.strings in Resources */,
-				776C22EB18223417000A1227 /* Main_iPad.storyboard in Resources */,
 				776C22F618223417000A1227 /* Images.xcassets in Resources */,
-				776C22E818223417000A1227 /* Main_iPhone.storyboard in Resources */,
 				776C22DF18223417000A1227 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,16 +473,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77B557BB1823A59F00872BEE /* UILabel+Extension.m in Sources */,
 				776C22E118223417000A1227 /* main.m in Sources */,
 				77A8DD811822642800B41F09 /* TCCategoryListModel.m in Sources */,
-				776C22F418223417000A1227 /* TCDetailViewController.m in Sources */,
+				77B557AF1823A33800872BEE /* TCQuestionView.m in Sources */,
 				77A8DD7D182262C600B41F09 /* TCListModel.m in Sources */,
 				77A8DD8D1822816800B41F09 /* TCQuestionListModel.m in Sources */,
 				77A8DD851822660100B41F09 /* TCCategory.m in Sources */,
-				776C22F118223417000A1227 /* TCMasterViewController.m in Sources */,
 				776C22E518223417000A1227 /* TCAppDelegate.m in Sources */,
 				776C22EE18223417000A1227 /* ToeicIOS.xcdatamodeld in Sources */,
 				77A8DD8918227F5A00B41F09 /* TCQuestion.m in Sources */,
+				77B557B61823A38800872BEE /* TCCategoryVC.m in Sources */,
+				77B557B71823A38800872BEE /* TCQuestionVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,28 +522,6 @@
 				77A8DD7918225EFB00B41F09 /* Base */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		776C22E618223417000A1227 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				776C22E718223417000A1227 /* Base */,
-				77A8DD6218225D8F00B41F09 /* ja */,
-				77A8DD6918225E7900B41F09 /* zh-Hans */,
-				77A8DD6D18225E9300B41F09 /* zh-Hant */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		776C22E918223417000A1227 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				776C22EA18223417000A1227 /* Base */,
-				77A8DD6318225D8F00B41F09 /* ja */,
-				77A8DD6A18225E7900B41F09 /* zh-Hans */,
-				77A8DD6E18225E9300B41F09 /* zh-Hant */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		776C230618223417000A1227 /* InfoPlist.strings */ = {

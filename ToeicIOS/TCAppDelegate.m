@@ -8,7 +8,7 @@
 
 #import "TCAppDelegate.h"
 #import <Parse/Parse.h>
-#import "TCMasterViewController.h"
+#import "TCCategoryVC.h"
 
 @implementation TCAppDelegate
 
@@ -21,6 +21,11 @@
     [Parse setApplicationId:@"teKBUtsKIayWc3H9OYv77SIHSujiPZZQNRluCF6w"
                   clientKey:@"TQYBAAEEqnuuuTJhOd46oXeFuErQGKhkrhpWbkAl"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    UINavigationController *rootVC = [[UINavigationController alloc] initWithRootViewController:[[TCCategoryVC alloc] init]];
+    self.window.rootViewController = rootVC;
+    [self.window makeKeyAndVisible];
     
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
