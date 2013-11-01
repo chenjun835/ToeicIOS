@@ -101,6 +101,7 @@
                      }
                      completion:^(BOOL finished) {
                          weakSelf.pageControl.currentPage = toPage;
+                         [_bannerView changeCurrentPage:toPage+1];
                      }];
 }
 

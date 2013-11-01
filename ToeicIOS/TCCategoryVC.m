@@ -57,6 +57,7 @@
     
     TCCategory *category = _model.list[indexPath.row];
     cell.textLabel.text = category.categoryName;
+    cell.textLabel.font = [UIFont systemFontOfSize:14.f];
     
     return cell;
 }

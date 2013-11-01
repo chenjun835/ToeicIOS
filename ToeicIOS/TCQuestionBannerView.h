@@ -11,5 +11,6 @@
 @interface TCQuestionBannerView : UIView
 
 - (id)initWithDesc:(NSString *)desc currentPage:(int)currentPage totalPage:(int)totalPage;
+- (void)changeCurrentPage:(int)currentPage;
 
 @end

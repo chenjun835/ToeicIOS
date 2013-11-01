@@ -10,6 +10,7 @@
 #import "UILabel+Extension.h"
 #import "TCDefines.h"
 #import "TCOptionView.h"
+#import "UIView+AutoLayout.h"
 
 @implementation TCQuestionView
 
@@ -22,20 +23,26 @@
         questionBodyLabel.text = question.questionBody;
         questionBodyLabel.preferredMaxLayoutWidth = 290;
         
+        UIImageView *line = [[UIImageView alloc] init];
+        [line setTranslatesAutoresizingMaskIntoConstraints:NO];
+        line.backgroundColor = [UIColor lightGrayColor];
+        [line constrainToHeight:0.5f];
+        
         TCOptionView *optionA = [[TCOptionView alloc] initWithMark:kOptionMarkA optionBody:question.optionA];
         TCOptionView *optionB = [[TCOptionView alloc] initWithMark:kOptionMarkB optionBody:question.optionB];
         TCOptionView *optionC = [[TCOptionView alloc] initWithMark:kOptionMarkC optionBody:question.optionC];
         TCOptionView *optionD = [[TCOptionView alloc] initWithMark:kOptionMarkD optionBody:question.optionD];
         
         [self addSubview:questionBodyLabel];
+        [self addSubview:line];
         [self addSubview:optionA];
         [self addSubview:optionB];
         [self addSubview:optionC];
         [self addSubview:optionD];
         
-        NSDictionary *views = NSDictionaryOfVariableBindings(questionBodyLabel, optionA, optionB, optionC, optionD);
+        NSDictionary *views = NSDictionaryOfVariableBindings(questionBodyLabel, line, optionA, optionB, optionC, optionD);
         NSDictionary *metrics = @{@"padding": @kPadding};
-        NSString *visualFormat = @"V:|-60-[questionBodyLabel]-padding-[optionA]-padding-[optionB]-padding-[optionC]-padding-[optionD]-(>=padding)-|";
+        NSString *visualFormat = @"V:|-60-[questionBodyLabel]-padding-[line]-padding-[optionA]-padding-[optionB]-padding-[optionC]-padding-[optionD]-(>=padding)-|";
         
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:visualFormat
                                                                      options:NSLayoutFormatAlignAllLeft|NSLayoutFormatAlignAllRight
