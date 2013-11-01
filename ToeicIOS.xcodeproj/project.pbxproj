@@ -64,6 +64,8 @@
 		77B557BB1823A59F00872BEE /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557BA1823A59F00872BEE /* UILabel+Extension.m */; };
 		77B557BE1823AA7000872BEE /* TCOptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557BD1823AA7000872BEE /* TCOptionView.m */; };
 		77B557C11823AD1900872BEE /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557C01823AD1900872BEE /* UIButton+Extension.m */; };
+		77B557C41823CC2900872BEE /* TCSwipViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557C31823CC2900872BEE /* TCSwipViews.m */; };
+		77B557C71823D65600872BEE /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557C61823D65600872BEE /* UIView+AutoLayout.m */; };
 		EE133DA3AF7D483E9B2AB81B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 297D6E0BA9464CE2A86D35A5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -143,6 +145,10 @@
 		77B557BD1823AA7000872BEE /* TCOptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCOptionView.m; sourceTree = "<group>"; };
 		77B557BF1823AD1900872BEE /* UIButton+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
 		77B557C01823AD1900872BEE /* UIButton+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
+		77B557C21823CC2900872BEE /* TCSwipViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCSwipViews.h; sourceTree = "<group>"; };
+		77B557C31823CC2900872BEE /* TCSwipViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCSwipViews.m; sourceTree = "<group>"; };
+		77B557C51823D65600872BEE /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
+		77B557C61823D65600872BEE /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
 		9E4B81355E064B879D6B4DF1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -322,6 +328,8 @@
 				77B557AE1823A33800872BEE /* TCQuestionView.m */,
 				77B557BC1823AA7000872BEE /* TCOptionView.h */,
 				77B557BD1823AA7000872BEE /* TCOptionView.m */,
+				77B557C21823CC2900872BEE /* TCSwipViews.h */,
+				77B557C31823CC2900872BEE /* TCSwipViews.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -337,6 +345,8 @@
 		77B557B81823A54400872BEE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				77B557C51823D65600872BEE /* UIView+AutoLayout.h */,
+				77B557C61823D65600872BEE /* UIView+AutoLayout.m */,
 				77B557B91823A59F00872BEE /* UILabel+Extension.h */,
 				77B557BA1823A59F00872BEE /* UILabel+Extension.m */,
 				77B557BF1823AD1900872BEE /* UIButton+Extension.h */,
@@ -492,10 +502,12 @@
 				77A8DD8D1822816800B41F09 /* TCQuestionListModel.m in Sources */,
 				77A8DD851822660100B41F09 /* TCCategory.m in Sources */,
 				776C22E518223417000A1227 /* TCAppDelegate.m in Sources */,
+				77B557C71823D65600872BEE /* UIView+AutoLayout.m in Sources */,
 				77B557C11823AD1900872BEE /* UIButton+Extension.m in Sources */,
 				776C22EE18223417000A1227 /* ToeicIOS.xcdatamodeld in Sources */,
 				77A8DD8918227F5A00B41F09 /* TCQuestion.m in Sources */,
 				77B557B61823A38800872BEE /* TCCategoryVC.m in Sources */,
+				77B557C41823CC2900872BEE /* TCSwipViews.m in Sources */,
 				77B557B71823A38800872BEE /* TCQuestionVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,7 @@
 #import "TCQuestionVC.h"
 #import "TCCategory.h"
 #import "TCQuestionListModel.h"
-#import "TCQuestionView.h"
+#import "TCSwipViews.h"
 #import <UIView-Autolayout/UIView+AutoLayout.h>
 
 @interface TCQuestionVC ()
@@ -48,23 +48,16 @@
 #pragma mark - Private methods
 
 - (void)changeQuestionView {
-    TCQuestionView *questionView = [[TCQuestionView alloc] initWithQuestion:_model.list[0]];
-    [self.view addSubview:questionView];
+    TCSwipViews *swipeViews = [[TCSwipViews alloc] initWithQuestionList:_model.list];
+    [self.view addSubview:swipeViews];
     
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[questionView]|"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[swipeViews]|"
                                                                       options:0
                                                                       metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(questionView)]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-80-[questionView]|"
+                                                                        views:NSDictionaryOfVariableBindings(swipeViews)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-80-[swipeViews]|"
                                                                       options:0
                                                                       metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(questionView)]];
-//    [questionView pinToSuperviewEdgesWithInset:UIEdgeInsetsZero];
-    
-    
-//    [questionView makeConstraints:^(MASConstraintMaker *make) {
-//        make.edges.equalTo(self.view);
-//    }];
-    
+                                                                        views:NSDictionaryOfVariableBindings(swipeViews)]];
 }
 @end
