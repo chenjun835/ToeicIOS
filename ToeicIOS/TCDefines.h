@@ -8,3 +8,10 @@
 
 #define kMargin  15.f
 #define kPadding 15.f
+
+#define kOptionButtonRoundRadius 9.f
+
+#define kOptionMarkA @"A"
+#define kOptionMarkB @"B"
+#define kOptionMarkC @"C"
+#define kOptionMarkD @"D"
