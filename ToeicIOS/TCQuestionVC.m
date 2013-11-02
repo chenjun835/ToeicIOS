@@ -48,7 +48,7 @@
 #pragma mark - Private methods
 
 - (void)changeQuestionView {
-    TCSwipViews *swipeViews = [[TCSwipViews alloc] initWithQuestionList:_model];
+    TCSwipViews *swipeViews = [[TCSwipViews alloc] initWithQuestionList:_model.list];
     [self.view addSubview:swipeViews];
     
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[swipeViews]|"

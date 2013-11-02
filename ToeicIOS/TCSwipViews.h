@@ -11,6 +11,6 @@
 
 @interface TCSwipViews : UIView
 
-- (id)initWithQuestionList:(TCListModel *)listModel;
+- (id)initWithQuestionList:(NSArray *)list;
 
 @end

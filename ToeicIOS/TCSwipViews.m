@@ -23,11 +23,11 @@
 
 @implementation TCSwipViews
 
-- (id)initWithQuestionList:(TCListModel *)listModel
+- (id)initWithQuestionList:(NSArray *)list
 {
     self = [super init];
     if (self) {
-        _list = listModel.list;
+        _list = list;
         
         [self setTranslatesAutoresizingMaskIntoConstraints:NO];
         
