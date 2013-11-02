@@ -14,10 +14,9 @@
 @interface TCSwipViews ()
 
 @property (strong, nonatomic) NSArray *list;
-@property (strong, nonatomic) NSArray *viewList;
+@property (strong, nonatomic) NSMutableArray *viewList;
 @property (strong, nonatomic) NSArray *currentConstraints;
 @property (strong, nonatomic) UIPageControl *pageControl;
-@property (strong, nonatomic) TCQuestionBannerView *bannerView;
 
 @end
 
@@ -39,34 +38,24 @@
             control;
         });
         
-        _bannerView = [[TCQuestionBannerView alloc] initWithDesc:@"語彙練習"
-                                                     currentPage:1
-                                                       totalPage:_list.count];
-        [_bannerView constrainToHeight:44.f];
-        
-        [self addSubview:_bannerView];
         [self addSubview:_pageControl];
         
-        [_bannerView pinToSuperviewEdges:JRTViewPinLeftEdge|JRTViewPinTopEdge|JRTViewPinRightEdge inset:0.f];
-        [_pageControl pinToSuperviewEdges:JRTViewPinLeftEdge|JRTViewPinBottomEdge|JRTViewPinRightEdge inset:0.f];
-        [_pageControl pinEdge:NSLayoutAttributeTop toEdge:NSLayoutAttributeBottom ofItem:_bannerView];
+        [_pageControl pinToSuperviewEdgesWithInset:UIEdgeInsetsZero];
         
-        NSMutableArray *array = [NSMutableArray arrayWithCapacity:_pageControl.numberOfPages];
+        _viewList = [NSMutableArray arrayWithCapacity:_pageControl.numberOfPages];
         for (int page=_pageControl.currentPage; page<_pageControl.numberOfPages; page++) {
-            array[page] = [self questionViewWithPage:page];
+            _viewList[page] = [self questionViewWithPage:page];
             
-            [self addSubview:array[page]];
-            [array[page] constrainToSize:_pageControl.frame.size];
+            [self addSubview:_viewList[page]];
+            [_viewList[page] constrainToSize:_pageControl.frame.size];
+            [_viewList[page] pinToSuperviewEdges:JRTViewPinTopEdge inset:0.f];
             
             if (page > _pageControl.currentPage) {
-                [array[page] pinEdge:NSLayoutAttributeLeft toEdge:NSLayoutAttributeRight ofItem:array[page-1]];
-                [array[page] pinEdge:NSLayoutAttributeTop toEdge:NSLayoutAttributeTop ofItem:array[page-1]];
+                [_viewList[page] pinEdge:NSLayoutAttributeLeft toEdge:NSLayoutAttributeRight ofItem:_viewList[page-1]];
             }
         }
         
-        _viewList = array;
-        
-        _currentConstraints = [_viewList[_pageControl.currentPage] pinToSuperviewEdges:JRTViewPinLeftEdge|JRTViewPinTopEdge inset:0];
+        _currentConstraints = [_viewList[_pageControl.currentPage] pinToSuperviewEdges:JRTViewPinLeftEdge inset:0];
     }
     return self;
 }
@@ -92,7 +81,7 @@
 
 - (void)swipToPage:(int)toPage {
     [self removeConstraints:_currentConstraints];
-    _currentConstraints = [_viewList[toPage] pinToSuperviewEdges:JRTViewPinLeftEdge|JRTViewPinTopEdge inset:0];
+    _currentConstraints = [_viewList[toPage] pinToSuperviewEdges:JRTViewPinLeftEdge inset:0];
 
     __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:1.f
@@ -101,7 +90,6 @@
                      }
                      completion:^(BOOL finished) {
                          weakSelf.pageControl.currentPage = toPage;
-                         [_bannerView changeCurrentPage:toPage+1];
                      }];
 }
 
