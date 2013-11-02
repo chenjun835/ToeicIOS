@@ -6,8 +6,6 @@
 //  Copyright (c) 2013年 陳 俊. All rights reserved.
 //
 
-#define kDefaultListLimit 20
-
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 

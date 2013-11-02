@@ -7,6 +7,7 @@
 //
 
 #import "TCAppDelegate.h"
+#import "TCDefines.h"
 #import <Parse/Parse.h>
 #import "TCCategoryVC.h"
 
@@ -18,8 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [Parse setApplicationId:@"teKBUtsKIayWc3H9OYv77SIHSujiPZZQNRluCF6w"
-                  clientKey:@"TQYBAAEEqnuuuTJhOd46oXeFuErQGKhkrhpWbkAl"];
+    [Parse setApplicationId:kParseApplicationId
+                  clientKey:kParseClientKey];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

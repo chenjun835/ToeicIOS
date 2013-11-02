@@ -7,6 +7,7 @@
 //
 
 #import "TCListModel.h"
+#import "TCDefines.h"
 
 @implementation TCListModel
 

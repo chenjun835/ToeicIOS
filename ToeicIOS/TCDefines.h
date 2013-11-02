@@ -6,6 +6,14 @@
 //  Copyright (c) 2013年 陳 俊. All rights reserved.
 //
 
+// Parse
+#define kParseApplicationId @"teKBUtsKIayWc3H9OYv77SIHSujiPZZQNRluCF6w"
+#define kParseClientKey     @"TQYBAAEEqnuuuTJhOd46oXeFuErQGKhkrhpWbkAl" 
+
+// Model
+#define kDefaultListLimit 10
+
+// view
 #define kMargin  15.f
 #define kPadding 15.f
 

@@ -10,6 +10,7 @@
 #import "TCCategoryListModel.h"
 #import "TCCategory.h"
 #import "TCQuestionVC.h"
+#import "TCDefines.h"
 
 @interface TCCategoryVC ()
 

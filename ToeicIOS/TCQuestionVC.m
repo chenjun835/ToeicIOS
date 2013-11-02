@@ -10,7 +10,7 @@
 #import "TCCategory.h"
 #import "TCQuestionListModel.h"
 #import "TCSwipViews.h"
-#import <UIView-Autolayout/UIView+AutoLayout.h>
+#import "TCDefines.h"
 
 @interface TCQuestionVC ()
 
