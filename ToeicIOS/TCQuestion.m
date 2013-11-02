@@ -18,6 +18,14 @@
     question.optionB = [object objectForKey:@"B"];
     question.optionC = [object objectForKey:@"C"];
     question.optionD = [object objectForKey:@"D"];
+    
+    // TODO - change bellow code
+    
+    TCCategory *category = [[TCCategory alloc] init];
+    category.categoryId = @"xx";
+    category.categoryName = @"語彙練習";
+    question.category = category;
+    
     return question;
 }
 

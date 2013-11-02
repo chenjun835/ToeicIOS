@@ -21,8 +21,7 @@
 
 @implementation TCSwipViews
 
-- (id)initWithQuestionList:(NSArray *)list
-{
+- (id)initWithQuestionList:(NSArray *)list {
     self = [super init];
     if (self) {
         _list = list;
@@ -62,7 +61,7 @@
 #pragma mark - Private methods
 
 - (TCQuestionView *)questionViewWithPage:(int)page {
-    TCQuestionView *questionView = [[TCQuestionView alloc] initWithQuestion:_list[page]];
+    TCQuestionView *questionView = [[TCQuestionView alloc] initWithQuestion:_list[page] num:page total:_list.count];
     if (page < (_pageControl.numberOfPages-1)) {
         UISwipeGestureRecognizer *gr = [[UISwipeGestureRecognizer alloc] initWithTarget:self
                                                                                  action:@selector(showNextPage)];

@@ -22,16 +22,16 @@
 
 @implementation TCQuestionView
 
-- (id)initWithQuestion:(TCQuestion *)question {
+- (id)initWithQuestion:(TCQuestion *)question num:(int)num total:(int)total {
     self = [super init];
     if (self) {
         _question = question;
         
         [self setTranslatesAutoresizingMaskIntoConstraints:NO];
         
-        TCQuestionBannerView *bannerView = [[TCQuestionBannerView alloc] initWithDesc:@"語彙練習"
-                                                                          currentPage:1
-                                                                            totalPage:10];
+        TCQuestionBannerView *bannerView = [[TCQuestionBannerView alloc] initWithDesc:question.category.categoryName
+                                                                          currentPage:num
+                                                                            totalPage:total];
         [self initQuestionView];
         
         [self addSubview:bannerView];

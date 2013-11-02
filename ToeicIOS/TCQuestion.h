@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import "TCCategory.h"
 
 @interface TCQuestion : NSObject
 
@@ -17,6 +18,8 @@
 @property (nonatomic, strong) NSString *optionB;
 @property (nonatomic, strong) NSString *optionC;
 @property (nonatomic, strong) NSString *optionD;
+
+@property (nonatomic, strong) TCCategory *category;
 
 - (id)initWithPFObject:(PFObject *)object;
 

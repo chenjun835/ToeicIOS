@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TCListModel.h"
+#import "TCCategory.h"
 
 @interface TCSwipViews : UIView
 

@@ -11,6 +11,6 @@
 
 @interface TCQuestionView : UIView
 
-- (id)initWithQuestion:(TCQuestion *)question;
+- (id)initWithQuestion:(TCQuestion *)question num:(int)num total:(int)total;
 
 @end
