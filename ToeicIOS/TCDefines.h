@@ -25,6 +25,8 @@
 #define kBannerBackgroundColor UIColorFromRGB(0xEEEEEE)
 
 // View
+#define kDefaultNavigationBarHeight 64.f //set by Apple
+
 #define kMargin  15.f
 #define kPadding 15.f
 #define kOptionButtonRoundRadius 9.f

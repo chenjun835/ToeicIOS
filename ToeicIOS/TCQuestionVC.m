@@ -10,7 +10,6 @@
 #import "TCCategory.h"
 #import "TCQuestionListModel.h"
 #import "TCSwipViews.h"
-#import "TCQuestionBannerView.h"
 #import "TCDefines.h"
 #import "UIView+AutoLayout.h"
 
@@ -50,20 +49,10 @@
 #pragma mark - Private methods
 
 - (void)initSubViews{
-    TCQuestionBannerView *bannerView = [[TCQuestionBannerView alloc] initWithDesc:_category.categoryName currentPage:1 totalPage:_model.list.count];
     TCSwipViews *swipeViews = [[TCSwipViews alloc] initWithQuestionList:_model.list];
-    
-    [self.view addSubview:bannerView];
     [self.view addSubview:swipeViews];
     
-    NSDictionary *views = NSDictionaryOfVariableBindings(bannerView, swipeViews);
-    NSString *visualFormat = @"V:|-70-[bannerView(44)][swipeViews]|";
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:visualFormat
-                                                                      options:NSLayoutFormatAlignAllLeft|NSLayoutFormatAlignAllRight
-                                                                      metrics:nil
-                                                                        views:views]];
-    [bannerView pinToSuperviewEdges:JRTViewPinLeftEdge|JRTViewPinRightEdge inset:0.f];
+    [swipeViews pinToSuperviewEdgesWithInset:UIEdgeInsetsMake(kDefaultNavigationBarHeight, 0, 0, 0)];
 }
 
 @end
