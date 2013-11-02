@@ -29,6 +29,7 @@
 - (void)loadMoreWithDidLoadBlock:(didLoadBlock_t)didLoadBlock {
     PFQuery *query = [PFQuery queryWithClassName:@"Question"];
     [query includeKey:@"category"];
+    [query orderByAscending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             for (PFObject *obj in objects) {
