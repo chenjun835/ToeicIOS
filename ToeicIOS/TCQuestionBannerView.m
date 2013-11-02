@@ -24,6 +24,7 @@
     if (self) {
         [self setTranslatesAutoresizingMaskIntoConstraints:NO];
         self.backgroundColor = kBannerBackgroundColor;
+        [self constrainToHeight:44.f];
         
         UILabel *descLabel = [UILabel bannerDescLabel];
         descLabel.text = desc;

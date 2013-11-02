@@ -9,53 +9,78 @@
 #import "TCQuestionView.h"
 #import "UILabel+Extension.h"
 #import "TCDefines.h"
+#import "TCQuestionBannerView.h"
 #import "TCOptionView.h"
 #import "UIView+AutoLayout.h"
+
+@interface TCQuestionView ()
+
+@property (strong, nonatomic) TCQuestion *question;
+@property (strong, nonatomic) UIView *questionView;
+
+@end
 
 @implementation TCQuestionView
 
 - (id)initWithQuestion:(TCQuestion *)question {
     self = [super init];
     if (self) {
+        _question = question;
+        
         [self setTranslatesAutoresizingMaskIntoConstraints:NO];
         
-        UILabel *questionBodyLabel = [UILabel questionBodyLabel];
-        questionBodyLabel.text = question.questionBody;
-        questionBodyLabel.preferredMaxLayoutWidth = 290;
+        TCQuestionBannerView *bannerView = [[TCQuestionBannerView alloc] initWithDesc:@"語彙練習"
+                                                                          currentPage:1
+                                                                            totalPage:10];
+        [self initQuestionView];
         
-        UIImageView *line = [[UIImageView alloc] init];
-        [line setTranslatesAutoresizingMaskIntoConstraints:NO];
-        line.backgroundColor = [UIColor lightGrayColor];
-        [line constrainToHeight:0.5f];
+        [self addSubview:bannerView];
+        [self addSubview:_questionView];
         
-        TCOptionView *optionA = [[TCOptionView alloc] initWithMark:kOptionMarkA optionBody:question.optionA];
-        TCOptionView *optionB = [[TCOptionView alloc] initWithMark:kOptionMarkB optionBody:question.optionB];
-        TCOptionView *optionC = [[TCOptionView alloc] initWithMark:kOptionMarkC optionBody:question.optionC];
-        TCOptionView *optionD = [[TCOptionView alloc] initWithMark:kOptionMarkD optionBody:question.optionD];
-        
-        [self addSubview:questionBodyLabel];
-        [self addSubview:line];
-        [self addSubview:optionA];
-        [self addSubview:optionB];
-        [self addSubview:optionC];
-        [self addSubview:optionD];
-        
-        NSDictionary *views = NSDictionaryOfVariableBindings(questionBodyLabel, line, optionA, optionB, optionC, optionD);
-        NSDictionary *metrics = @{@"padding": @kPadding};
-        NSString *visualFormat = @"V:|-padding-[questionBodyLabel]-padding-[line]-padding-[optionA]-padding-[optionB]-padding-[optionC]-padding-[optionD]-(>=padding)-|";
-        
+        NSDictionary *views = NSDictionaryOfVariableBindings(bannerView, _questionView);
+        NSString *visualFormat = @"V:|[bannerView][_questionView]|";
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:visualFormat
                                                                      options:NSLayoutFormatAlignAllLeft|NSLayoutFormatAlignAllRight
-                                                                     metrics:metrics
+                                                                     metrics:nil
                                                                        views:views]];
-        
-        visualFormat = @"|-padding-[questionBodyLabel]-padding-|";
-        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:visualFormat
-                                                                     options:0
-                                                                     metrics:metrics
-                                                                       views:views]];
+        [bannerView pinToSuperviewEdges:JRTViewPinLeftEdge|JRTViewPinRightEdge inset:0];
     }
     return self;
+}
+
+- (void)initQuestionView {
+    _questionView = [UIView autoLayoutView];
+    
+    UILabel *questionBodyLabel = [UILabel questionBodyLabel];
+    questionBodyLabel.text = _question.questionBody;
+    questionBodyLabel.preferredMaxLayoutWidth = 300;
+    
+    UIImageView *line = [[UIImageView alloc] init];
+    [line setTranslatesAutoresizingMaskIntoConstraints:NO];
+    line.backgroundColor = [UIColor lightGrayColor];
+    [line constrainToHeight:0.5f];
+    
+    TCOptionView *optionA = [[TCOptionView alloc] initWithMark:kOptionMarkA optionBody:_question.optionA];
+    TCOptionView *optionB = [[TCOptionView alloc] initWithMark:kOptionMarkB optionBody:_question.optionB];
+    TCOptionView *optionC = [[TCOptionView alloc] initWithMark:kOptionMarkC optionBody:_question.optionC];
+    TCOptionView *optionD = [[TCOptionView alloc] initWithMark:kOptionMarkD optionBody:_question.optionD];
+    
+    [_questionView addSubview:questionBodyLabel];
+    [_questionView addSubview:line];
+    [_questionView addSubview:optionA];
+    [_questionView addSubview:optionB];
+    [_questionView addSubview:optionC];
+    [_questionView addSubview:optionD];
+    
+    NSDictionary *views = NSDictionaryOfVariableBindings(questionBodyLabel, line, optionA, optionB, optionC, optionD);
+    NSDictionary *metrics = @{@"padding": @kPadding};
+    NSString *visualFormat = @"V:|-padding-[questionBodyLabel]-padding-[line]-padding-[optionA]-padding-[optionB]-padding-[optionC]-padding-[optionD]-(>=padding)-|";
+    
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:visualFormat
+                                                                 options:NSLayoutFormatAlignAllLeft|NSLayoutFormatAlignAllRight
+                                                                 metrics:metrics
+                                                                   views:views]];
+    [questionBodyLabel pinToSuperviewEdges:JRTViewPinLeftEdge|JRTViewPinRightEdge inset:kPadding];
 }
 
 @end
