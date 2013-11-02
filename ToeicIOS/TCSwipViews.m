@@ -8,7 +8,6 @@
 
 #import "TCSwipViews.h"
 #import "TCQuestionView.h"
-#import "TCQuestionBannerView.h"
 #import "UIView+AutoLayout.h"
 
 @interface TCSwipViews ()
