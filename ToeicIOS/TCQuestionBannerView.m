@@ -23,7 +23,7 @@
     self = [super init];
     if (self) {
         [self setTranslatesAutoresizingMaskIntoConstraints:NO];
-        self.backgroundColor = [UIColor lightGrayColor];
+        self.backgroundColor = kBannerBackgroundColor;
         
         UILabel *descLabel = [UILabel bannerDescLabel];
         descLabel.text = desc;
@@ -52,5 +52,4 @@
 - (void)changeCurrentPage:(int)currentPage {
     _currentPageLabel.text = [NSString stringWithFormat:@"%d", currentPage];
 }
-
 @end

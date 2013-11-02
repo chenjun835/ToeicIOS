@@ -67,6 +67,7 @@
 		77B557C41823CC2900872BEE /* TCSwipViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557C31823CC2900872BEE /* TCSwipViews.m */; };
 		77B557C71823D65600872BEE /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557C61823D65600872BEE /* UIView+AutoLayout.m */; };
 		77B557CA1823D88D00872BEE /* TCQuestionBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557C91823D88D00872BEE /* TCQuestionBannerView.m */; };
+		77B557CD1824EEBB00872BEE /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557CC1824EEBB00872BEE /* UIColor+Extension.m */; };
 		EE133DA3AF7D483E9B2AB81B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 297D6E0BA9464CE2A86D35A5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -152,6 +153,8 @@
 		77B557C61823D65600872BEE /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
 		77B557C81823D88D00872BEE /* TCQuestionBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCQuestionBannerView.h; sourceTree = "<group>"; };
 		77B557C91823D88D00872BEE /* TCQuestionBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCQuestionBannerView.m; sourceTree = "<group>"; };
+		77B557CB1824EEBB00872BEE /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
+		77B557CC1824EEBB00872BEE /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
 		9E4B81355E064B879D6B4DF1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -356,6 +359,8 @@
 				77B557BA1823A59F00872BEE /* UILabel+Extension.m */,
 				77B557BF1823AD1900872BEE /* UIButton+Extension.h */,
 				77B557C01823AD1900872BEE /* UIButton+Extension.m */,
+				77B557CB1824EEBB00872BEE /* UIColor+Extension.h */,
+				77B557CC1824EEBB00872BEE /* UIColor+Extension.m */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -511,6 +516,7 @@
 				77B557C71823D65600872BEE /* UIView+AutoLayout.m in Sources */,
 				77B557C11823AD1900872BEE /* UIButton+Extension.m in Sources */,
 				776C22EE18223417000A1227 /* ToeicIOS.xcdatamodeld in Sources */,
+				77B557CD1824EEBB00872BEE /* UIColor+Extension.m in Sources */,
 				77A8DD8918227F5A00B41F09 /* TCQuestion.m in Sources */,
 				77B557B61823A38800872BEE /* TCCategoryVC.m in Sources */,
 				77B557C41823CC2900872BEE /* TCSwipViews.m in Sources */,

@@ -42,7 +42,7 @@
         
         NSDictionary *views = NSDictionaryOfVariableBindings(questionBodyLabel, line, optionA, optionB, optionC, optionD);
         NSDictionary *metrics = @{@"padding": @kPadding};
-        NSString *visualFormat = @"V:|-60-[questionBodyLabel]-padding-[line]-padding-[optionA]-padding-[optionB]-padding-[optionC]-padding-[optionD]-(>=padding)-|";
+        NSString *visualFormat = @"V:|-padding-[questionBodyLabel]-padding-[line]-padding-[optionA]-padding-[optionB]-padding-[optionC]-padding-[optionD]-(>=padding)-|";
         
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:visualFormat
                                                                      options:NSLayoutFormatAlignAllLeft|NSLayoutFormatAlignAllRight

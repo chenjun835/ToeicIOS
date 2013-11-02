@@ -6,6 +6,14 @@
 //  Copyright (c) 2013年 陳 俊. All rights reserved.
 //
 
+#import "UIColor+Extension.h"
+
+// shortcut
+#define UIColorFromRGB(rgbValue) [UIColor colorFromRGB:rgbValue alpha:1.0]
+#define UIFontOfSize(size)       [UIFont systemFontOfSize:size]
+#define UIBoldFontOfSize(size)   [UIFont boldSystemFontOfSize:size]
+#define UIImageWithName(name)    [UIImage imageNamed:name]
+
 // Parse
 #define kParseApplicationId @"teKBUtsKIayWc3H9OYv77SIHSujiPZZQNRluCF6w"
 #define kParseClientKey     @"TQYBAAEEqnuuuTJhOd46oXeFuErQGKhkrhpWbkAl" 
@@ -13,10 +21,12 @@
 // Model
 #define kDefaultListLimit 10
 
-// view
+// Color
+#define kBannerBackgroundColor UIColorFromRGB(0xEEEEEE)
+
+// View
 #define kMargin  15.f
 #define kPadding 15.f
-
 #define kOptionButtonRoundRadius 9.f
 
 #define kOptionMarkA @"A"
