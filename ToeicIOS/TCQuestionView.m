@@ -13,11 +13,16 @@
 #import "TCOptionView.h"
 #import "UIView+AutoLayout.h"
 
-@interface TCQuestionView ()
+@interface TCQuestionView () <TCOptionViewDelegate>
 
 @property (strong, nonatomic) TCQuestion *question;
 @property (strong, nonatomic) UIView *questionContentView;
 @property (strong, nonatomic) UILabel *questionBodyLabel;
+@property (strong, nonatomic) NSString *selectedMark;
+@property (strong, nonatomic) TCOptionView *optionA;
+@property (strong, nonatomic) TCOptionView *optionB;
+@property (strong, nonatomic) TCOptionView *optionC;
+@property (strong, nonatomic) TCOptionView *optionD;
 
 @end
 
@@ -60,22 +65,27 @@
     line.backgroundColor = [UIColor lightGrayColor];
     [line constrainToHeight:0.5f];
     
-    TCOptionView *optionA = [[TCOptionView alloc] initWithMark:kOptionMarkA optionBody:_question.optionA];
-    TCOptionView *optionB = [[TCOptionView alloc] initWithMark:kOptionMarkB optionBody:_question.optionB];
-    TCOptionView *optionC = [[TCOptionView alloc] initWithMark:kOptionMarkC optionBody:_question.optionC];
-    TCOptionView *optionD = [[TCOptionView alloc] initWithMark:kOptionMarkD optionBody:_question.optionD];
+    _optionA = [[TCOptionView alloc] initWithMark:kOptionMarkA optionBody:_question.optionA];
+    _optionB = [[TCOptionView alloc] initWithMark:kOptionMarkB optionBody:_question.optionB];
+    _optionC = [[TCOptionView alloc] initWithMark:kOptionMarkC optionBody:_question.optionC];
+    _optionD = [[TCOptionView alloc] initWithMark:kOptionMarkD optionBody:_question.optionD];
+    
+    _optionA.delegate = self;
+    _optionB.delegate = self;
+    _optionC.delegate = self;
+    _optionD.delegate = self;
     
     [self addSubview:_questionContentView];
     [_questionContentView addSubview:_questionBodyLabel];
     [_questionContentView addSubview:line];
-    [_questionContentView addSubview:optionA];
-    [_questionContentView addSubview:optionB];
-    [_questionContentView addSubview:optionC];
-    [_questionContentView addSubview:optionD];
+    [_questionContentView addSubview:_optionA];
+    [_questionContentView addSubview:_optionB];
+    [_questionContentView addSubview:_optionC];
+    [_questionContentView addSubview:_optionD];
     
-    NSDictionary *views = NSDictionaryOfVariableBindings(_questionBodyLabel, line, optionA, optionB, optionC, optionD);
+    NSDictionary *views = NSDictionaryOfVariableBindings(_questionBodyLabel, line, _optionA, _optionB, _optionC, _optionD);
     NSDictionary *metrics = @{@"padding": @kPadding};
-    NSString *visualFormat = @"V:|-padding-[_questionBodyLabel]-padding-[line]-padding-[optionA]-padding-[optionB]-padding-[optionC]-padding-[optionD]-(>=padding)-|";
+    NSString *visualFormat = @"V:|-padding-[_questionBodyLabel]-padding-[line]-padding-[_optionA]-padding-[_optionB]-padding-[_optionC]-padding-[_optionD]-(>=padding)-|";
     
     [_questionContentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:visualFormat
                                                                                  options:NSLayoutFormatAlignAllLeft|NSLayoutFormatAlignAllRight
@@ -83,6 +93,29 @@
                                                                                    views:views]];
     
     [_questionBodyLabel pinToSuperviewEdges:JRTViewPinLeftEdge|JRTViewPinRightEdge inset:kPadding];
+}
+
+#pragma mark - TCOptionViewDelegate 
+
+- (void)mark:(NSString *)mark changeToState:(BOOL)isSelected {
+    if (!isSelected) {
+        _selectedMark = nil;
+    }
+    else {
+        if ([_selectedMark isEqualToString:kOptionMarkA]) {
+            [_optionA unSelect];
+        }
+        else if ([_selectedMark isEqualToString:kOptionMarkB]) {
+            [_optionB unSelect];
+        }
+        else if ([_selectedMark isEqualToString:kOptionMarkC]) {
+            [_optionC unSelect];
+        }
+        else if ([_selectedMark isEqualToString:kOptionMarkD]) {
+            [_optionD unSelect];
+        }
+        _selectedMark = mark;
+    }
 }
 
 @end

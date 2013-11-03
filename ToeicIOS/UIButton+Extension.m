@@ -23,23 +23,4 @@
     return button;
 }
 
-+ (UIButton *)optionRoundButton {
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.backgroundColor = [UIColor lightGrayColor];
-    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [button.titleLabel setFont:[UIFont boldSystemFontOfSize:13.f]];
-    button.frame = CGRectMake(0, 0, 2*kOptionButtonRoundRadius, 2*kOptionButtonRoundRadius);
-    button.layer.cornerRadius = kOptionButtonRoundRadius;
-    return button;
-}
-
-- (void)changeOptionRoundButtonState {
-    if (self.backgroundColor == [UIColor lightGrayColor]) {
-        self.backgroundColor = [UIColor greenColor];
-    }
-    else {
-        self.backgroundColor = [UIColor lightGrayColor];
-    }
-}
-
 @end

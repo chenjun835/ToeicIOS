@@ -69,6 +69,7 @@
 		77B557CA1823D88D00872BEE /* TCQuestionBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557C91823D88D00872BEE /* TCQuestionBannerView.m */; };
 		77B557CD1824EEBB00872BEE /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557CC1824EEBB00872BEE /* UIColor+Extension.m */; };
 		77B557D818264F3D00872BEE /* TCCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557D718264F3D00872BEE /* TCCategoryCell.m */; };
+		77B557DC18267E5C00872BEE /* TCOptionRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557DB18267E5C00872BEE /* TCOptionRoundButton.m */; };
 		EE133DA3AF7D483E9B2AB81B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 297D6E0BA9464CE2A86D35A5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -158,6 +159,8 @@
 		77B557CC1824EEBB00872BEE /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
 		77B557D618264F3D00872BEE /* TCCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCCategoryCell.h; sourceTree = "<group>"; };
 		77B557D718264F3D00872BEE /* TCCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCCategoryCell.m; sourceTree = "<group>"; };
+		77B557DA18267E5C00872BEE /* TCOptionRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCOptionRoundButton.h; sourceTree = "<group>"; };
+		77B557DB18267E5C00872BEE /* TCOptionRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCOptionRoundButton.m; sourceTree = "<group>"; };
 		9E4B81355E064B879D6B4DF1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -333,6 +336,7 @@
 		77B557AC1823A31200872BEE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				77B557D918267E1200872BEE /* common */,
 				77B557D518264F0800872BEE /* Cells */,
 				77B557AD1823A33800872BEE /* TCQuestionView.h */,
 				77B557AE1823A33800872BEE /* TCQuestionView.m */,
@@ -376,6 +380,15 @@
 				77B557D718264F3D00872BEE /* TCCategoryCell.m */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		77B557D918267E1200872BEE /* common */ = {
+			isa = PBXGroup;
+			children = (
+				77B557DA18267E5C00872BEE /* TCOptionRoundButton.h */,
+				77B557DB18267E5C00872BEE /* TCOptionRoundButton.m */,
+			);
+			name = common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -528,6 +541,7 @@
 				776C22E518223417000A1227 /* TCAppDelegate.m in Sources */,
 				77B557D818264F3D00872BEE /* TCCategoryCell.m in Sources */,
 				77B557C71823D65600872BEE /* UIView+AutoLayout.m in Sources */,
+				77B557DC18267E5C00872BEE /* TCOptionRoundButton.m in Sources */,
 				77B557C11823AD1900872BEE /* UIButton+Extension.m in Sources */,
 				776C22EE18223417000A1227 /* ToeicIOS.xcdatamodeld in Sources */,
 				77B557CD1824EEBB00872BEE /* UIColor+Extension.m in Sources */,

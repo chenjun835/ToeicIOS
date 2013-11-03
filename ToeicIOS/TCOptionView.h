@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol TCOptionViewDelegate <NSObject>
+
+- (void)mark:(NSString *)mark changeToState:(BOOL)isSelected;
+
+@end
+
 @interface TCOptionView : UIView
 
-- (id)initWithMark:(NSString *)optionMark optionBody:(NSString *)optionBody;
+@property (weak, nonatomic) id<TCOptionViewDelegate> delegate;
+
+- (id)initWithMark:(NSString *)mark optionBody:(NSString *)optionBody;
+- (void)unSelect;
 
 @end

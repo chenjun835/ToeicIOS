@@ -9,39 +9,43 @@
 #import "TCOptionView.h"
 #import "TCDefines.h"
 #import "UILabel+Extension.h"
-#import "UIButton+Extension.h"
+#import "TCOptionRoundButton.h"
 
 @interface TCOptionView ()
 
-@property (strong, nonatomic) UILabel *bodyLabel;
+@property (assign, nonatomic) BOOL isSelected;
+@property (strong, nonatomic) TCOptionRoundButton *markButton;
+@property (strong, nonatomic) NSString *mark;
 
 @end
 
 @implementation TCOptionView
 
-- (id)initWithMark:(NSString *)optionMark optionBody:(NSString *)optionBody {
+- (id)initWithMark:(NSString *)mark optionBody:(NSString *)optionBody {
     self = [super init];
     if (self) {
         [self setTranslatesAutoresizingMaskIntoConstraints:NO];
         
-        UIButton *markButton = [UIButton optionRoundButton];
-        [markButton setTitle:optionMark forState:UIControlStateNormal];
-        [markButton addTarget:self action:@selector(markButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+        _isSelected = NO;
+        _mark = mark;
         
-        _bodyLabel = [UILabel questionOptionLabel];
-        _bodyLabel.text = optionBody;
+        _markButton = [[TCOptionRoundButton alloc] initWithMark:mark];
+        [_markButton addTarget:self action:@selector(changeState) forControlEvents:UIControlEventTouchUpInside];
         
-        [self addSubview:markButton];
-        [self addSubview:_bodyLabel];
+        UILabel *bodyLabel = [UILabel questionOptionLabel];
+        bodyLabel.text = optionBody;
         
-        NSDictionary *views = NSDictionaryOfVariableBindings(markButton, _bodyLabel);
+        [self addSubview:_markButton];
+        [self addSubview:bodyLabel];
+        
+        NSDictionary *views = NSDictionaryOfVariableBindings(_markButton, bodyLabel);
         NSDictionary *metrics = @{@"margin": @kMargin};
-        NSString *visualFormat = @"|[markButton]-margin-[_bodyLabel]|";
+        NSString *visualFormat = @"|[_markButton]-margin-[bodyLabel]|";
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:visualFormat
                                                                      options:NSLayoutFormatAlignAllTop
                                                                      metrics:metrics
                                                                        views:views]];
-        visualFormat = @"V:|[_bodyLabel]|";
+        visualFormat = @"V:|[bodyLabel]|";
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:visualFormat
                                                                      options:0
                                                                      metrics:nil
@@ -51,11 +55,22 @@
     return self;
 }
 
+- (void)unSelect {
+    if (_isSelected) {
+        [self changeState];
+    }
+}
+
 #pragma mark - Private methods
 
-- (void)markButtonTapped:(id)sender {
-    UIButton *optionButton = (UIButton *)sender;
-    [optionButton changeOptionRoundButtonState];
+- (void)changeState {
+    [_markButton changeState];
+    _isSelected = !_isSelected;
+    if ([_delegate respondsToSelector:@selector(mark:changeToState:)]) {
+        [_delegate mark:_mark changeToState:_isSelected];
+    }
 }
+
+
 
 @end
