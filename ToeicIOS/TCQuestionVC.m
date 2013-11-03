@@ -12,6 +12,7 @@
 #import "TCSwipViews.h"
 #import "TCDefines.h"
 #import "UIView+AutoLayout.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface TCQuestionVC ()
 
@@ -38,10 +39,16 @@
 {
     [super viewDidLoad];
     
+    [SVProgressHUD showWithStatus:NSLocalizedString(@"fetch questions for your situation", nil) maskType:SVProgressHUDMaskTypeNone];
     _model = [[TCQuestionListModel alloc] initWithCategoryId:_category.categoryId];
     [_model loadWithLimit:kDefaultListLimit didLoadBlock:^(NSError *error) {
         if (!error && _model.list.count>0) {
-            [self initSubViews];
+            [self performSelector:@selector(initSubViews) withObject:nil afterDelay:1];
+//            [SVProgressHUD dismiss];
+//            [self initSubViews];
+        }
+        else {
+            [SVProgressHUD showErrorWithStatus:@"fetch questions failed"];
         }
     }];
 }
@@ -49,6 +56,7 @@
 #pragma mark - Private methods
 
 - (void)initSubViews{
+    [SVProgressHUD dismiss];
     TCSwipViews *swipeViews = [[TCSwipViews alloc] initWithQuestionList:_model.list];
     [self.view addSubview:swipeViews];
     
