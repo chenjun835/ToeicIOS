@@ -17,6 +17,7 @@
 
 @property (strong, nonatomic) TCQuestion *question;
 @property (strong, nonatomic) UIView *questionView;
+@property (strong, nonatomic) UILabel *questionBodyLabel;
 
 @end
 
@@ -51,9 +52,8 @@
 - (void)initQuestionView {
     _questionView = [UIView autoLayoutView];
     
-    UILabel *questionBodyLabel = [UILabel questionBodyLabel];
-    questionBodyLabel.text = _question.questionBody;
-    questionBodyLabel.preferredMaxLayoutWidth = 300;
+    _questionBodyLabel = [UILabel questionBodyLabel];
+    _questionBodyLabel.text = _question.questionBody;
     
     UIImageView *line = [[UIImageView alloc] init];
     [line setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -65,22 +65,27 @@
     TCOptionView *optionC = [[TCOptionView alloc] initWithMark:kOptionMarkC optionBody:_question.optionC];
     TCOptionView *optionD = [[TCOptionView alloc] initWithMark:kOptionMarkD optionBody:_question.optionD];
     
-    [_questionView addSubview:questionBodyLabel];
+    [_questionView addSubview:_questionBodyLabel];
     [_questionView addSubview:line];
     [_questionView addSubview:optionA];
     [_questionView addSubview:optionB];
     [_questionView addSubview:optionC];
     [_questionView addSubview:optionD];
     
-    NSDictionary *views = NSDictionaryOfVariableBindings(questionBodyLabel, line, optionA, optionB, optionC, optionD);
+    NSDictionary *views = NSDictionaryOfVariableBindings(_questionBodyLabel, line, optionA, optionB, optionC, optionD);
     NSDictionary *metrics = @{@"padding": @kPadding};
-    NSString *visualFormat = @"V:|-padding-[questionBodyLabel]-padding-[line]-padding-[optionA]-padding-[optionB]-padding-[optionC]-padding-[optionD]-(>=padding)-|";
+    NSString *visualFormat = @"V:|-padding-[_questionBodyLabel]-padding-[line]-padding-[optionA]-padding-[optionB]-padding-[optionC]-padding-[optionD]-(>=padding)-|";
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:visualFormat
                                                                  options:NSLayoutFormatAlignAllLeft|NSLayoutFormatAlignAllRight
                                                                  metrics:metrics
                                                                    views:views]];
-    [questionBodyLabel pinToSuperviewEdges:JRTViewPinLeftEdge|JRTViewPinRightEdge inset:kPadding];
+    [_questionBodyLabel pinToSuperviewEdges:JRTViewPinLeftEdge|JRTViewPinRightEdge inset:kPadding];
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    _questionBodyLabel.preferredMaxLayoutWidth = _questionBodyLabel.frame.size.width;
+    [super layoutSubviews];
+}
 @end

@@ -11,6 +11,12 @@
 #import "UILabel+Extension.h"
 #import "UIButton+Extension.h"
 
+@interface TCOptionView ()
+
+@property (strong, nonatomic) UILabel *bodyLabel;
+
+@end
+
 @implementation TCOptionView
 
 - (id)initWithMark:(NSString *)optionMark optionBody:(NSString *)optionBody {
@@ -22,20 +28,21 @@
         [markButton setTitle:optionMark forState:UIControlStateNormal];
         [markButton addTarget:self action:@selector(markButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
         
-        UILabel *bodyLabel = [UILabel questionOptionLabel];
-        bodyLabel.text = optionBody;
+        _bodyLabel = [UILabel questionOptionLabel];
+        _bodyLabel.preferredMaxLayoutWidth = 280;
+        _bodyLabel.text = optionBody;
         
         [self addSubview:markButton];
-        [self addSubview:bodyLabel];
+        [self addSubview:_bodyLabel];
         
-        NSDictionary *views = NSDictionaryOfVariableBindings(markButton, bodyLabel);
+        NSDictionary *views = NSDictionaryOfVariableBindings(markButton, _bodyLabel);
         NSDictionary *metrics = @{@"margin": @kMargin};
-        NSString *visualFormat = @"|[markButton]-margin-[bodyLabel]|";
+        NSString *visualFormat = @"|[markButton]-margin-[_bodyLabel]|";
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:visualFormat
                                                                      options:NSLayoutFormatAlignAllTop
                                                                      metrics:metrics
                                                                        views:views]];
-        visualFormat = @"V:|[bodyLabel]|";
+        visualFormat = @"V:|[_bodyLabel]|";
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:visualFormat
                                                                      options:0
                                                                      metrics:nil
@@ -43,6 +50,12 @@
         
     }
     return self;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    _bodyLabel.preferredMaxLayoutWidth = _bodyLabel.frame.size.width;
+    [super layoutSubviews];
 }
 
 #pragma mark - Private methods

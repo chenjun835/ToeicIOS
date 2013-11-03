@@ -38,14 +38,15 @@
         
         [self addSubview:_pageControl];
         
-        [_pageControl pinToSuperviewEdgesWithInset:UIEdgeInsetsZero];
+        [_pageControl pinToSuperviewEdges:JRTViewPinLeftEdge|JRTViewPinRightEdge|JRTViewPinBottomEdge inset:0];
         
         _viewList = [NSMutableArray arrayWithCapacity:_pageControl.numberOfPages];
         for (int page=_pageControl.currentPage; page<_pageControl.numberOfPages; page++) {
             _viewList[page] = [self questionViewWithPage:page];
             
             [self addSubview:_viewList[page]];
-            [_viewList[page] constrainToSize:_pageControl.frame.size];
+            [_viewList[page] pinAttribute:NSLayoutAttributeWidth toSameAttributeOfView:self];
+            [_viewList[page] pinAttribute:NSLayoutAttributeHeight toSameAttributeOfView:self];
             [_viewList[page] pinToSuperviewEdges:JRTViewPinTopEdge inset:0.f];
             
             if (page > _pageControl.currentPage) {
@@ -61,7 +62,7 @@
 #pragma mark - Private methods
 
 - (TCQuestionView *)questionViewWithPage:(int)page {
-    TCQuestionView *questionView = [[TCQuestionView alloc] initWithQuestion:_list[page] num:page total:_list.count];
+    TCQuestionView *questionView = [[TCQuestionView alloc] initWithQuestion:_list[page] num:page+1 total:_list.count];
     if (page < (_pageControl.numberOfPages-1)) {
         UISwipeGestureRecognizer *gr = [[UISwipeGestureRecognizer alloc] initWithTarget:self
                                                                                  action:@selector(showNextPage)];

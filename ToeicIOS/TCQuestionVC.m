@@ -29,7 +29,7 @@
         _category = category;
         
         self.navigationItem.title = _category.categoryName;
-        self.view.backgroundColor = [UIColor whiteColor];
+        self.view.backgroundColor = kBackgroundColor;
     }
     return self;
 }

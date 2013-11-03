@@ -22,6 +22,7 @@
 #define kDefaultListLimit 10
 
 // Color
+#define kBackgroundColor       UIColorFromRGB(0xF3F3F3)
 #define kBannerBackgroundColor UIColorFromRGB(0xEEEEEE)
 
 // View
