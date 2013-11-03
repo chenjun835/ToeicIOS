@@ -20,6 +20,9 @@
 #define kParseApplicationId @"teKBUtsKIayWc3H9OYv77SIHSujiPZZQNRluCF6w"
 #define kParseClientKey     @"TQYBAAEEqnuuuTJhOd46oXeFuErQGKhkrhpWbkAl" 
 
+// Cell
+#define kCategoryCell @"TCCategoryCell"
+
 // Model
 #define kDefaultListLimit 10
 

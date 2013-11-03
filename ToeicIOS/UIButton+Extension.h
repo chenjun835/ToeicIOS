@@ -11,6 +11,8 @@
 @interface UIButton (Extension)
 
 + (UIButton *)optionRoundButton;
++ (UIButton *)defaultButton;
+
 - (void)changeOptionRoundButtonState;
 
 @end

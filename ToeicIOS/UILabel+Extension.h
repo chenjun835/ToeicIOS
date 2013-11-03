@@ -10,6 +10,7 @@
 
 @interface UILabel (Extension)
 
++ (UILabel *)defaultLabel;
 + (UILabel *)questionBodyLabel;
 + (UILabel *)questionOptionLabel;
 + (UILabel *)bannerDescLabel;

@@ -12,6 +12,17 @@
 
 @implementation UIButton (Extension)
 
++ (UIButton *)defaultButton {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    button.backgroundColor = [UIColor lightGrayColor];
+    button.layer.cornerRadius = 4;
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
+    [button.titleLabel setFont:[UIFont boldSystemFontOfSize:13.f]];
+    [button setTranslatesAutoresizingMaskIntoConstraints:NO];
+    return button;
+}
+
 + (UIButton *)optionRoundButton {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.backgroundColor = [UIColor lightGrayColor];

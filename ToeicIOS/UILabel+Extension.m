@@ -10,6 +10,14 @@
 
 @implementation UILabel (Extension)
 
++ (UILabel *)defaultLabel {
+    UILabel *label = [UILabel autolayoutLabel];
+    label.numberOfLines = 1;
+    label.textColor = [UIColor darkTextColor];
+    label.lineBreakMode = NSLineBreakByTruncatingTail;
+    return label;
+}
+
 + (UILabel *)questionBodyLabel {
     UILabel *label = [UILabel autolayoutLabel];
     label.numberOfLines = 0;

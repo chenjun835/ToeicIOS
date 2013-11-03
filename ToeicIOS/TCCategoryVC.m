@@ -11,8 +11,9 @@
 #import "TCCategory.h"
 #import "TCQuestionVC.h"
 #import "TCDefines.h"
+#import "TCCategoryCell.h"
 
-@interface TCCategoryVC ()
+@interface TCCategoryVC () <TCCategoryCellDelegate>
 
 @property (nonatomic, strong) TCCategoryListModel *model;
 
@@ -33,6 +34,8 @@
 {
     [super viewDidLoad];
 
+    [self.tableView registerClass:[TCCategoryCell class] forCellReuseIdentifier:kCategoryCell];
+    
     _model = [TCCategoryListModel sharedModel];
     [_model loadWithLimit:kDefaultListLimit didLoadBlock:^(NSError *error) {
         [self.tableView reloadData];
@@ -53,23 +56,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    TCCategoryCell *categoryCell = [tableView dequeueReusableCellWithIdentifier:kCategoryCell];
+    [categoryCell transformWithCategory:_model.list[indexPath.row]];
+    categoryCell.delegate = self;
     
-    TCCategory *category = _model.list[indexPath.row];
-    cell.textLabel.text = category.categoryName;
-    cell.textLabel.font = [UIFont systemFontOfSize:14.f];
-    
-    return cell;
+    return categoryCell;
 }
 
-#pragma mark - Table view delegate
+#pragma mark - TCCategoryCellDelegate 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
-    TCQuestionVC *questionVC = [[TCQuestionVC alloc] initWithCategory:_model.list[indexPath.row]];
+- (void)fetchQuestionsWithCategory:(TCCategory *)category {
+    TCQuestionVC *questionVC = [[TCQuestionVC alloc] initWithCategory:category];
     [self.navigationController pushViewController:questionVC animated:YES];
 }
 
