@@ -16,7 +16,7 @@
 @interface TCQuestionView ()
 
 @property (strong, nonatomic) TCQuestion *question;
-@property (strong, nonatomic) UIView *questionView;
+@property (strong, nonatomic) UIView *questionContentView;
 @property (strong, nonatomic) UILabel *questionBodyLabel;
 
 @end
@@ -33,13 +33,12 @@
         TCQuestionBannerView *bannerView = [[TCQuestionBannerView alloc] initWithDesc:question.category.categoryName
                                                                           currentPage:num
                                                                             totalPage:total];
-        [self initQuestionView];
-        
         [self addSubview:bannerView];
-        [self addSubview:_questionView];
         
-        NSDictionary *views = NSDictionaryOfVariableBindings(bannerView, _questionView);
-        NSString *visualFormat = @"V:|[bannerView][_questionView]|";
+        [self initQuestionContentView];
+        
+        NSDictionary *views = NSDictionaryOfVariableBindings(bannerView, _questionContentView);
+        NSString *visualFormat = @"V:|[bannerView][_questionContentView]|";
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:visualFormat
                                                                      options:NSLayoutFormatAlignAllLeft|NSLayoutFormatAlignAllRight
                                                                      metrics:nil
@@ -49,8 +48,8 @@
     return self;
 }
 
-- (void)initQuestionView {
-    _questionView = [UIView autoLayoutView];
+- (void)initQuestionContentView {
+    _questionContentView = [UIView autoLayoutView];
     
     _questionBodyLabel = [UILabel questionBodyLabel];
     _questionBodyLabel.text = _question.questionBody;
@@ -65,12 +64,13 @@
     TCOptionView *optionC = [[TCOptionView alloc] initWithMark:kOptionMarkC optionBody:_question.optionC];
     TCOptionView *optionD = [[TCOptionView alloc] initWithMark:kOptionMarkD optionBody:_question.optionD];
     
-    [_questionView addSubview:_questionBodyLabel];
-    [_questionView addSubview:line];
-    [_questionView addSubview:optionA];
-    [_questionView addSubview:optionB];
-    [_questionView addSubview:optionC];
-    [_questionView addSubview:optionD];
+    [self addSubview:_questionContentView];
+    [_questionContentView addSubview:_questionBodyLabel];
+    [_questionContentView addSubview:line];
+    [_questionContentView addSubview:optionA];
+    [_questionContentView addSubview:optionB];
+    [_questionContentView addSubview:optionC];
+    [_questionContentView addSubview:optionD];
     
     NSDictionary *views = NSDictionaryOfVariableBindings(_questionBodyLabel, line, optionA, optionB, optionC, optionD);
     NSDictionary *metrics = @{@"padding": @kPadding};
