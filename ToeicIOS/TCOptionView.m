@@ -29,7 +29,6 @@
         [markButton addTarget:self action:@selector(markButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
         
         _bodyLabel = [UILabel questionOptionLabel];
-        _bodyLabel.preferredMaxLayoutWidth = 280;
         _bodyLabel.text = optionBody;
         
         [self addSubview:markButton];
