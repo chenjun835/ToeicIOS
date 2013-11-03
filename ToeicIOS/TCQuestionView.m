@@ -43,7 +43,8 @@
                                                                      options:NSLayoutFormatAlignAllLeft|NSLayoutFormatAlignAllRight
                                                                      metrics:nil
                                                                        views:views]];
-        [bannerView pinToSuperviewEdges:JRTViewPinLeftEdge|JRTViewPinRightEdge inset:0];
+        [bannerView pinToSuperviewEdges:JRTViewPinLeftEdge inset:0];
+        [bannerView constrainToWidth:kScreenWidth];
     }
     return self;
 }
@@ -76,16 +77,12 @@
     NSDictionary *metrics = @{@"padding": @kPadding};
     NSString *visualFormat = @"V:|-padding-[_questionBodyLabel]-padding-[line]-padding-[optionA]-padding-[optionB]-padding-[optionC]-padding-[optionD]-(>=padding)-|";
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:visualFormat
-                                                                 options:NSLayoutFormatAlignAllLeft|NSLayoutFormatAlignAllRight
-                                                                 metrics:metrics
-                                                                   views:views]];
+    [_questionContentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:visualFormat
+                                                                                 options:NSLayoutFormatAlignAllLeft|NSLayoutFormatAlignAllRight
+                                                                                 metrics:metrics
+                                                                                   views:views]];
+    
     [_questionBodyLabel pinToSuperviewEdges:JRTViewPinLeftEdge|JRTViewPinRightEdge inset:kPadding];
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    _questionBodyLabel.preferredMaxLayoutWidth = _questionBodyLabel.frame.size.width;
-    [super layoutSubviews];
-}
 @end

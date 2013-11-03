@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TCQuestion.h"
 
-@interface TCQuestionView : UIView
+@interface TCQuestionView : UIScrollView
 
 - (id)initWithQuestion:(TCQuestion *)question num:(int)num total:(int)total;
 

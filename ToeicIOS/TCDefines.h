@@ -9,6 +9,8 @@
 #import "UIColor+Extension.h"
 
 // shortcut
+#define kScreenWidth [[UIScreen mainScreen] bounds].size.width
+
 #define UIColorFromRGB(rgbValue) [UIColor colorFromRGB:rgbValue alpha:1.0]
 #define UIFontOfSize(size)       [UIFont systemFontOfSize:size]
 #define UIBoldFontOfSize(size)   [UIFont boldSystemFontOfSize:size]

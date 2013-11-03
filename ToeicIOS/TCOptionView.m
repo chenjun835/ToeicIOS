@@ -51,12 +51,6 @@
     return self;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    _bodyLabel.preferredMaxLayoutWidth = _bodyLabel.frame.size.width;
-    [super layoutSubviews];
-}
-
 #pragma mark - Private methods
 
 - (void)markButtonTapped:(id)sender {
