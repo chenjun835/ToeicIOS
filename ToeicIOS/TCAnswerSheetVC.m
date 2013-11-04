@@ -12,6 +12,7 @@
 #import "UIView+AutoLayout.h"
 #import "TCDefines.h"
 #import "TCQuestionBannerView.h"
+#import "UIButton+Extension.h"
 
 @interface TCAnswerSheetVC ()
 
@@ -79,6 +80,14 @@
             [answerView pinEdge:NSLayoutAttributeTop toEdge:NSLayoutAttributeBottom ofItem:_answerViews[i-1]];
         }
     }
+    
+    UIButton *submitButton = [UIButton defaultButton];
+    [submitButton setTitle:NSLocalizedString(@"submit & check result", nil) forState:UIControlStateNormal];
+    [self.view addSubview:submitButton];
+    
+    [submitButton centerInContainerOnAxis:NSLayoutAttributeCenterX];
+    [submitButton pinEdge:NSLayoutAttributeTop toEdge:NSLayoutAttributeBottom ofItem:_answerViews.lastObject inset:kPadding];
+    [submitButton constrainToHeight:44];
 }
 
 - (void)transformAnswerSheet {
