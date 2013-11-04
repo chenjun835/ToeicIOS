@@ -8,6 +8,7 @@
 
 #import "TCQuestion.h"
 #import <Parse/PFObject+Subclass.h>
+#import "TCDefines.h"
 
 @implementation TCQuestion
 
@@ -20,7 +21,7 @@
 @dynamic userAnswer;
 
 + (NSString *)parseClassName {
-    return @"TCQuestion";
+    return kClassNameQuestion;
 }
 
 @end

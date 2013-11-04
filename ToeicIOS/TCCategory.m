@@ -8,13 +8,14 @@
 
 #import "TCCategory.h"
 #import <Parse/PFObject+Subclass.h>
+#import "TCDefines.h"
 
 @implementation TCCategory
 
 @dynamic name;
 
 + (NSString *)parseClassName {
-    return @"TCCategory";
+    return kClassNameCategory;
 }
 
 @end

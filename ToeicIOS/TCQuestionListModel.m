@@ -34,7 +34,7 @@
 
 - (void)loadMoreWithDidLoadBlock:(didLoadBlock_t)didLoadBlock {
     PFQuery *query = [TCQuestion query];
-    [query whereKey:@"category" equalTo:[PFObject objectWithoutDataWithClassName:@"TCCategory"
+    [query whereKey:@"category" equalTo:[PFObject objectWithoutDataWithClassName:[TCCategory parseClassName]
                                                                         objectId:_category.objectId]];
     //[query includeKey:@"category"];
     [query orderByAscending:@"createdAt"];

@@ -20,6 +20,10 @@
 #define kParseApplicationId @"teKBUtsKIayWc3H9OYv77SIHSujiPZZQNRluCF6w"
 #define kParseClientKey     @"TQYBAAEEqnuuuTJhOd46oXeFuErQGKhkrhpWbkAl" 
 
+// Class name
+#define kClassNameCategory @"TCCategory"
+#define kClassNameQuestion @"TCQuestion"
+
 // Cell
 #define kCategoryCell @"TCCategoryCell"
 #define kAnswerSheetCell @"TCAnswerSheetCell"
