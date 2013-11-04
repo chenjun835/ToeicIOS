@@ -37,7 +37,7 @@
         
         [self setTranslatesAutoresizingMaskIntoConstraints:NO];
         
-        TCQuestionBannerView *bannerView = [[TCQuestionBannerView alloc] initWithDesc:question.category.categoryName
+        TCQuestionBannerView *bannerView = [[TCQuestionBannerView alloc] initWithDesc:question.category.name
                                                                           currentPage:num
                                                                             totalPage:total];
         [self addSubview:bannerView];

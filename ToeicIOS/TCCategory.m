@@ -7,14 +7,21 @@
 //
 
 #import "TCCategory.h"
+#import <Parse/PFObject+Subclass.h>
 
 @implementation TCCategory
 
-- (id)initWithPFObject:(PFObject *)object {
-    TCCategory *category = [[TCCategory alloc] init];
-    category.categoryId = object.objectId;
-    category.categoryName = object[@"name"];
-    return category;
+@dynamic name;
+
++ (NSString *)parseClassName {
+    return @"Category";
 }
+
+//- (id)initWithPFObject:(PFObject *)object {
+//    TCCategory *category = [[TCCategory alloc] init];
+//    category.categoryId = object.objectId;
+//    category.categoryName = object[@"name"];
+//    return category;
+//}
 
 @end

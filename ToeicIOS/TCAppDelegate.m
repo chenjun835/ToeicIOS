@@ -10,6 +10,7 @@
 #import "TCDefines.h"
 #import <Parse/Parse.h>
 #import "TCCategoryVC.h"
+#import "TCCategory.h"
 
 @implementation TCAppDelegate
 
@@ -19,6 +20,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [TCCategory registerSubclass];
+    
     [Parse setApplicationId:kParseApplicationId
                   clientKey:kParseClientKey];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];

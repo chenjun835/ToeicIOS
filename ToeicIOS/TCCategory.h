@@ -9,11 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 
-@interface TCCategory : NSObject
+@interface TCCategory : PFObject<PFSubclassing>
 
-@property (nonatomic, strong) NSString *categoryId;
-@property (nonatomic, strong) NSString *categoryName;
+//@property (nonatomic, strong) NSString *categoryId;
+@property (retain) NSString *name;
 
-- (id)initWithPFObject:(PFObject *)object;
++ (NSString *)parseClassName;
+//- (id)initWithPFObject:(PFObject *)object;
 
 @end

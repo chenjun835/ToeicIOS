@@ -35,7 +35,7 @@
 - (void)loadMoreWithDidLoadBlock:(didLoadBlock_t)didLoadBlock {
     PFQuery *query = [PFQuery queryWithClassName:@"Question"];
     [query whereKey:@"category" equalTo:[PFObject objectWithoutDataWithClassName:@"Category"
-                                                                        objectId:_category.categoryId]];
+                                                                        objectId:_category.objectId]];
     //[query includeKey:@"category"];
     [query orderByAscending:@"createdAt"];
     query.limit = self.limit;

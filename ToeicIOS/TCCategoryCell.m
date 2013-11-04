@@ -50,7 +50,7 @@
 
 - (void)transformWithCategory:(TCCategory *)category {
     _category = category;
-    _categoryNameLabel.text = category.categoryName;
+    _categoryNameLabel.text = category.name;
 }
 
 - (void)getQuestionButtonTapped {

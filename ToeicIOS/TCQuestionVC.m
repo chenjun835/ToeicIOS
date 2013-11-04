@@ -29,7 +29,7 @@
     if (self) {
         _category = category;
         
-        self.navigationItem.title = _category.categoryName;
+        self.navigationItem.title = _category.name;
         self.view.backgroundColor = kBackgroundColor;
     }
     return self;
