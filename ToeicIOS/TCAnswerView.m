@@ -33,9 +33,13 @@
         _numLabel.text = [NSString stringWithFormat:@"%d", num];
         
         _optionBtnA = [[TCOptionRoundButton alloc] initWithMark:kOptionMarkA];
+        [_optionBtnA addTarget:self action:@selector(optionBtnATapped) forControlEvents:UIControlEventTouchUpInside];
         _optionBtnB = [[TCOptionRoundButton alloc] initWithMark:kOptionMarkB];
+        [_optionBtnB addTarget:self action:@selector(optionBtnBTapped) forControlEvents:UIControlEventTouchUpInside];
         _optionBtnC = [[TCOptionRoundButton alloc] initWithMark:kOptionMarkC];
+        [_optionBtnC addTarget:self action:@selector(optionBtnCTapped) forControlEvents:UIControlEventTouchUpInside];
         _optionBtnD = [[TCOptionRoundButton alloc] initWithMark:kOptionMarkD];
+        [_optionBtnD addTarget:self action:@selector(optionBtnDTapped) forControlEvents:UIControlEventTouchUpInside];
         
         [self addSubview:_numLabel];
         [self addSubview:_optionBtnA];
@@ -58,22 +62,52 @@
 }
 
 - (void)transformWithQuestion:(TCQuestion *)question {
+    [self transformWithUserAnswer:question.userAnswer];
+}
+
+- (void)setUserAnswer:(NSString *)userAnswer {
     [self unselectAll];
-    if ([question.userAnswer isEqualToString:kOptionMarkA]) {
+    _userAnswer = userAnswer;
+    if ([_userAnswer isEqualToString:kOptionMarkA]) {
         _optionBtnA.isSelected = YES;
     }
-    else if ([question.userAnswer isEqualToString:kOptionMarkB]) {
+    else if ([_userAnswer isEqualToString:kOptionMarkB]) {
         _optionBtnB.isSelected = YES;
     }
-    else if ([question.userAnswer isEqualToString:kOptionMarkC]) {
+    else if ([_userAnswer isEqualToString:kOptionMarkC]) {
         _optionBtnC.isSelected = YES;
     }
-    else if ([question.userAnswer isEqualToString:kOptionMarkD]) {
+    else if ([_userAnswer isEqualToString:kOptionMarkD]) {
         _optionBtnD.isSelected = YES;
     }
 }
 
 #pragma mark - Private methods
+
+- (void)optionBtnATapped {
+    [self transformWithUserAnswer:kOptionMarkA];
+}
+
+- (void)optionBtnBTapped {
+    [self transformWithUserAnswer:kOptionMarkB];
+}
+
+- (void)optionBtnCTapped {
+    [self transformWithUserAnswer:kOptionMarkC];
+}
+
+- (void)optionBtnDTapped {
+    [self transformWithUserAnswer:kOptionMarkD];
+}
+
+- (void)transformWithUserAnswer:(NSString *)userAnswer {
+    if ([_userAnswer isEqualToString:userAnswer]) {
+        self.userAnswer = nil;
+    }
+    else {
+        self.userAnswer = userAnswer;
+    }
+}
 
 - (void)unselectAll {
     _optionBtnA.isSelected = NO;

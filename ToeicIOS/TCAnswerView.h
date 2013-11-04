@@ -11,6 +11,8 @@
 
 @interface TCAnswerView : UIView
 
+@property (strong, nonatomic) NSString *userAnswer;
+
 - (id)initWithQuestion:(TCQuestion *)question num:(int)num;
 - (void)transformWithQuestion:(TCQuestion *)question;
 
