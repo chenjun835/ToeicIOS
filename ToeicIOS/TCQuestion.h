@@ -10,20 +10,19 @@
 #import <Parse/Parse.h>
 #import "TCCategory.h"
 
-@interface TCQuestion : NSObject
+@interface TCQuestion : PFObject <PFSubclassing>
 
 // Data from server
-@property (nonatomic, strong) NSString *questionId;
-@property (nonatomic, strong) NSString *questionBody;
-@property (nonatomic, strong) NSString *optionA;
-@property (nonatomic, strong) NSString *optionB;
-@property (nonatomic, strong) NSString *optionC;
-@property (nonatomic, strong) NSString *optionD;
-@property (nonatomic, strong) TCCategory *category;
+@property (retain) NSString *body;
+@property (retain) NSString *A;
+@property (retain) NSString *B;
+@property (retain) NSString *C;
+@property (retain) NSString *D;
+@property (retain) TCCategory *category;
 
 // Data in Client
-@property (nonatomic, strong) NSString *userAnswer;
+@property (retain) NSString *userAnswer;
 
-- (id)initWithPFObject:(PFObject *)object;
++ (NSString *)parseClassName;
 
 @end

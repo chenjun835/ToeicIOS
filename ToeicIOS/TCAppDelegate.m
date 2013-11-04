@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 #import "TCCategoryVC.h"
 #import "TCCategory.h"
+#import "TCQuestion.h"
 
 @implementation TCAppDelegate
 
@@ -21,6 +22,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [TCCategory registerSubclass];
+    [TCQuestion registerSubclass];
     
     [Parse setApplicationId:kParseApplicationId
                   clientKey:kParseClientKey];

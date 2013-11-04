@@ -7,20 +7,20 @@
 //
 
 #import "TCQuestion.h"
+#import <Parse/PFObject+Subclass.h>
 
 @implementation TCQuestion
 
-- (id)initWithPFObject:(PFObject *)object {
-    TCQuestion *question = [[TCQuestion alloc] init];
-    question.questionId = object.objectId;
-    question.questionBody = object[@"body"];
-    question.optionA = object[@"A"];
-    question.optionB = object[@"B"];
-    question.optionC = object[@"C"];
-    question.optionD = object[@"D"];
-    //question.category = [[TCCategory alloc] initWithPFObject:object[@"category"]];
-    
-    return question;
+@dynamic body;
+@dynamic A;
+@dynamic B;
+@dynamic C;
+@dynamic D;
+@dynamic category;
+@dynamic userAnswer;
+
++ (NSString *)parseClassName {
+    return @"Question";
 }
 
 @end

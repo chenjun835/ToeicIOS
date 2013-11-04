@@ -33,7 +33,7 @@
 }
 
 - (void)loadMoreWithDidLoadBlock:(didLoadBlock_t)didLoadBlock {
-    PFQuery *query = [PFQuery queryWithClassName:@"Question"];
+    PFQuery *query = [TCQuestion query];
     [query whereKey:@"category" equalTo:[PFObject objectWithoutDataWithClassName:@"Category"
                                                                         objectId:_category.objectId]];
     //[query includeKey:@"category"];
@@ -41,8 +41,7 @@
     query.limit = self.limit;
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            for (PFObject *obj in objects) {
-                TCQuestion *question = [[TCQuestion alloc] initWithPFObject:obj];
+            for (TCQuestion *question in objects) {
                 question.category = _category;
                 [self.list addObject:question];
             }
