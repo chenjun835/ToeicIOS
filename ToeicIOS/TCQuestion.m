@@ -12,15 +12,15 @@
 @implementation TCQuestion
 
 @dynamic body;
-@dynamic A;
-@dynamic B;
-@dynamic C;
-@dynamic D;
+@dynamic optionA;
+@dynamic optionB;
+@dynamic optionC;
+@dynamic optionD;
 @dynamic category;
 @dynamic userAnswer;
 
 + (NSString *)parseClassName {
-    return @"Question";
+    return @"TCQuestion";
 }
 
 @end

@@ -14,7 +14,7 @@
 @dynamic name;
 
 + (NSString *)parseClassName {
-    return @"Category";
+    return @"TCCategory";
 }
 
 @end

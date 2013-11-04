@@ -67,10 +67,10 @@
     line.backgroundColor = [UIColor lightGrayColor];
     [line constrainToHeight:0.5f];
     
-    _optionA = [[TCOptionView alloc] initWithMark:kOptionMarkA optionBody:_question.A];
-    _optionB = [[TCOptionView alloc] initWithMark:kOptionMarkB optionBody:_question.B];
-    _optionC = [[TCOptionView alloc] initWithMark:kOptionMarkC optionBody:_question.C];
-    _optionD = [[TCOptionView alloc] initWithMark:kOptionMarkD optionBody:_question.D];
+    _optionA = [[TCOptionView alloc] initWithMark:kOptionMarkA optionBody:_question.optionA];
+    _optionB = [[TCOptionView alloc] initWithMark:kOptionMarkB optionBody:_question.optionB];
+    _optionC = [[TCOptionView alloc] initWithMark:kOptionMarkC optionBody:_question.optionC];
+    _optionD = [[TCOptionView alloc] initWithMark:kOptionMarkD optionBody:_question.optionD];
     
     _optionA.delegate = self;
     _optionB.delegate = self;

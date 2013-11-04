@@ -14,10 +14,10 @@
 
 // Data from server
 @property (retain) NSString *body;
-@property (retain) NSString *A;
-@property (retain) NSString *B;
-@property (retain) NSString *C;
-@property (retain) NSString *D;
+@property (retain) NSString *optionA;
+@property (retain) NSString *optionB;
+@property (retain) NSString *optionC;
+@property (retain) NSString *optionD;
 @property (retain) TCCategory *category;
 
 // Data in Client
