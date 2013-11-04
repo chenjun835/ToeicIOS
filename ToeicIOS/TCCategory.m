@@ -17,11 +17,4 @@
     return @"Category";
 }
 
-//- (id)initWithPFObject:(PFObject *)object {
-//    TCCategory *category = [[TCCategory alloc] init];
-//    category.categoryId = object.objectId;
-//    category.categoryName = object[@"name"];
-//    return category;
-//}
-
 @end

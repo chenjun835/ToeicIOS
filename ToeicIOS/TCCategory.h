@@ -11,10 +11,8 @@
 
 @interface TCCategory : PFObject<PFSubclassing>
 
-//@property (nonatomic, strong) NSString *categoryId;
 @property (retain) NSString *name;
 
 + (NSString *)parseClassName;
-//- (id)initWithPFObject:(PFObject *)object;
 
 @end
