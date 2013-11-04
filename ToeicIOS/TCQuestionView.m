@@ -23,6 +23,7 @@
 @property (strong, nonatomic) TCOptionView *optionB;
 @property (strong, nonatomic) TCOptionView *optionC;
 @property (strong, nonatomic) TCOptionView *optionD;
+@property (assign, nonatomic) int num;
 
 @end
 
@@ -32,6 +33,7 @@
     self = [super init];
     if (self) {
         _question = question;
+        _num = num;
         
         [self setTranslatesAutoresizingMaskIntoConstraints:NO];
         
@@ -100,7 +102,6 @@
 - (void)mark:(NSString *)mark changeToState:(BOOL)isSelected {
     if (!isSelected) {
         _selectedMark = nil;
-        _question.userAnswer = nil;
     }
     else {
         if ([_selectedMark isEqualToString:kOptionMarkA]) {
@@ -116,8 +117,11 @@
             [_optionD unSelect];
         }
         _selectedMark = mark;
-        _question.userAnswer = mark;
     }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationQuestionAnswered
+                                                        object:nil
+                                                      userInfo:@{@"num": [NSNumber numberWithInt:_num], @"answer":_selectedMark}];
 }
 
 @end

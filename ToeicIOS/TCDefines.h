@@ -24,6 +24,9 @@
 #define kCategoryCell @"TCCategoryCell"
 #define kAnswerSheetCell @"TCAnswerSheetCell"
 
+// Notification name
+#define kNotificationQuestionAnswered @"notificationQuestionAnswered"
+
 // Model
 #define kDefaultListLimit 10
 

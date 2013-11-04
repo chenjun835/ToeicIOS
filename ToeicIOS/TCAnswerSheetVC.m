@@ -35,13 +35,16 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    //[self transformAnswerSheet];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self initSubviews];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(questionAnswered:)
+                                                 name:kNotificationQuestionAnswered
+                                               object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -84,4 +87,15 @@
         [answerView transformWithQuestion:_model.list[i]];
     }
 }
+
+- (void)questionAnswered:(NSNotification *)notification {
+    NSDictionary *userInfo = notification.userInfo;
+    int num = [(NSNumber *)userInfo[@"num"] intValue];
+    NSString *answer = (NSString *)userInfo[@"answer"];
+    TCAnswerView *answerView = (TCAnswerView *)_answerViews[num-1];
+    answerView.userAnswer = answer;
+    
+    ((TCQuestion *)_model.list[num-1]).userAnswer = answer;
+}
+
 @end
