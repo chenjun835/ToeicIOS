@@ -7,11 +7,10 @@
 //
 
 #import "TCListModel.h"
+#import "TCCategory.h"
 
 @interface TCQuestionListModel : TCListModel
 
-@property (nonatomic, strong) NSString *categoryId;
-
-- (id)initWithCategoryId:(NSString *)categoryId;
+- (id)initWithCategory:(TCCategory *)category;
 
 @end

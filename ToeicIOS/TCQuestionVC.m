@@ -40,7 +40,7 @@
     [super viewDidLoad];
     
     [SVProgressHUD showWithStatus:NSLocalizedString(@"fetch questions for your situation", nil) maskType:SVProgressHUDMaskTypeNone];
-    _model = [[TCQuestionListModel alloc] initWithCategoryId:_category.categoryId];
+    _model = [[TCQuestionListModel alloc] initWithCategory:_category];
     [_model loadWithLimit:kDefaultListLimit didLoadBlock:^(NSError *error) {
         if (!error && _model.list.count>0) {
             [self performSelector:@selector(initSubViews) withObject:nil afterDelay:1];

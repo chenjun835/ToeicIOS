@@ -12,8 +12,8 @@
 
 - (id)initWithPFObject:(PFObject *)object {
     TCCategory *category = [[TCCategory alloc] init];
-    category.categoryId = [object objectForKey:@"objectId"];
-    category.categoryName = [object objectForKey:@"name"];
+    category.categoryId = object.objectId;
+    category.categoryName = object[@"name"];
     return category;
 }
 

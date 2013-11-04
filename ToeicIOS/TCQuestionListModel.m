@@ -9,12 +9,18 @@
 #import "TCQuestionListModel.h"
 #import "TCQuestion.h"
 
+@interface TCQuestionListModel ()
+
+@property (nonatomic, strong) TCCategory *category;
+
+@end
+
 @implementation TCQuestionListModel
 
-- (id)initWithCategoryId:(NSString *)categoryId {
+- (id)initWithCategory:(TCCategory *)category {
     self = [self init];
     if (self) {
-        _categoryId = categoryId;
+        _category = category;
     }
     return self;
 }
@@ -28,12 +34,17 @@
 
 - (void)loadMoreWithDidLoadBlock:(didLoadBlock_t)didLoadBlock {
     PFQuery *query = [PFQuery queryWithClassName:@"Question"];
-    [query includeKey:@"category"];
+    [query whereKey:@"category" equalTo:[PFObject objectWithoutDataWithClassName:@"Category"
+                                                                        objectId:_category.categoryId]];
+    //[query includeKey:@"category"];
     [query orderByAscending:@"createdAt"];
+    query.limit = self.limit;
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             for (PFObject *obj in objects) {
-                [self.list addObject:[[TCQuestion alloc] initWithPFObject:obj]];
+                TCQuestion *question = [[TCQuestion alloc] initWithPFObject:obj];
+                question.category = _category;
+                [self.list addObject:question];
             }
         }
         else {

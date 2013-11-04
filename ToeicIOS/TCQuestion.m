@@ -12,13 +12,13 @@
 
 - (id)initWithPFObject:(PFObject *)object {
     TCQuestion *question = [[TCQuestion alloc] init];
-    question.questionId = [object objectForKey:@"objectId"];
-    question.questionBody = [object objectForKey:@"body"];
-    question.optionA = [object objectForKey:@"A"];
-    question.optionB = [object objectForKey:@"B"];
-    question.optionC = [object objectForKey:@"C"];
-    question.optionD = [object objectForKey:@"D"];
-    question.category = [[TCCategory alloc] initWithPFObject:object[@"category"]];
+    question.questionId = object.objectId;
+    question.questionBody = object[@"body"];
+    question.optionA = object[@"A"];
+    question.optionB = object[@"B"];
+    question.optionC = object[@"C"];
+    question.optionD = object[@"D"];
+    //question.category = [[TCCategory alloc] initWithPFObject:object[@"category"]];
     
     return question;
 }
