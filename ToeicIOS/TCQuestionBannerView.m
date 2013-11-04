@@ -31,9 +31,15 @@
         
         _currentPageLabel = [UILabel highlightLabel];
         _currentPageLabel.text = [NSString stringWithFormat:@"%d", currentPage];
+        if (currentPage == 0) {
+            _currentPageLabel.hidden = YES;
+        }
         
         UILabel *totalPageLabel = [UILabel bannerDescLabel];
         totalPageLabel.text = [NSString stringWithFormat:@"|%d", totalPage];
+        if (totalPage == 0) {
+            totalPageLabel.hidden = YES;
+        }
         
         [self addSubview:descLabel];
         [self addSubview:_currentPageLabel];
@@ -45,7 +51,7 @@
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:visualFormat
                                                                      options:NSLayoutFormatAlignAllCenterY
                                                                      metrics:metrics views:views]];
-        [descLabel pinToSuperviewEdges:JRTViewPinTopEdge|JRTViewPinBottomEdge inset:kPadding];
+        [descLabel centerInContainerOnAxis:NSLayoutAttributeCenterY];
     }
     return self;
 }

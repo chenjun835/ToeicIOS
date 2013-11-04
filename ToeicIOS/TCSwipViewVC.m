@@ -51,6 +51,7 @@
                 TCAnswerSheetVC *answerSheetVC = [[TCAnswerSheetVC alloc] initWithQuestionListModel:_model];
                 [self addChildViewController:answerSheetVC];
                 _viewList[page] = answerSheetVC.view;
+                [self addRightGestureToView:_viewList[page]];
             }
             
             [self.view addSubview:_viewList[page]];
@@ -74,18 +75,26 @@
 - (TCQuestionView *)questionViewWithPage:(int)page {
     TCQuestionView *questionView = [[TCQuestionView alloc] initWithQuestion:_model.list[page] num:page+1 total:_model.list.count];
     if (page < (_pageControl.numberOfPages-1)) {
-        UISwipeGestureRecognizer *gr = [[UISwipeGestureRecognizer alloc] initWithTarget:self
-                                                                                 action:@selector(showNextPage)];
-        gr.direction = UISwipeGestureRecognizerDirectionLeft;
-        [questionView addGestureRecognizer:gr];
+        [self addLeftGestureToView:questionView];
     }
     if (page > 0) {
-        UISwipeGestureRecognizer *gr = [[UISwipeGestureRecognizer alloc] initWithTarget:self
-                                                                                 action:@selector(showPrevPage)];
-        gr.direction = UISwipeGestureRecognizerDirectionRight;
-        [questionView addGestureRecognizer:gr];
+        [self addRightGestureToView:questionView];
     }
     return questionView;
+}
+
+- (void)addLeftGestureToView:(UIView *)view {
+    UISwipeGestureRecognizer *gr = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                                             action:@selector(showNextPage)];
+    gr.direction = UISwipeGestureRecognizerDirectionLeft;
+    [view addGestureRecognizer:gr];
+}
+
+- (void)addRightGestureToView:(UIView *)view {
+    UISwipeGestureRecognizer *gr = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                                             action:@selector(showPrevPage)];
+    gr.direction = UISwipeGestureRecognizerDirectionRight;
+    [view addGestureRecognizer:gr];
 }
 
 - (void)swipToPage:(int)toPage {

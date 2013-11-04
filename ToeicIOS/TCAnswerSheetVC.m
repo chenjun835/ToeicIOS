@@ -7,11 +7,11 @@
 //
 
 #import "TCAnswerSheetVC.h"
-#import "TCAnswerSheetCell.h"
 #import "TCDefines.h"
 #import "TCAnswerView.h"
 #import "UIView+AutoLayout.h"
 #import "TCDefines.h"
+#import "TCQuestionBannerView.h"
 
 @interface TCAnswerSheetVC ()
 
@@ -33,6 +33,11 @@
     return self;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self transformAnswerSheet];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -46,6 +51,10 @@
 }
 
 - (void)initSubviews {
+    TCQuestionBannerView *bannerView = [[TCQuestionBannerView alloc] initWithDesc:NSLocalizedString(@"Answer Sheet", nil) currentPage:0 totalPage:0];
+    [self.view addSubview:bannerView];
+    [bannerView pinToSuperviewEdges:JRTViewPinTopEdge|JRTViewPinLeftEdge|JRTViewPinRightEdge inset:0];
+    
     _answerViews = [[NSMutableArray alloc] initWithCapacity:_model.list.count];
     for (int i=0; i<_model.list.count; i++) {
         _answerViews[i] = [[TCAnswerView alloc] initWithQuestion:_model.list[i] num:i+1];
@@ -61,11 +70,18 @@
         }
         [answerView pinToSuperviewEdges:JRTViewPinLeftEdge|JRTViewPinRightEdge inset:0];
         if (i==0) {
-            [answerView pinToSuperviewEdges:JRTViewPinTopEdge inset:kPadding];
+            [answerView pinEdge:NSLayoutAttributeTop toEdge:NSLayoutAttributeBottom ofItem:bannerView inset:kPadding];
         }
         else {
             [answerView pinEdge:NSLayoutAttributeTop toEdge:NSLayoutAttributeBottom ofItem:_answerViews[i-1]];
         }
+    }
+}
+
+- (void)transformAnswerSheet {
+    for (int i=0; i<_answerViews.count; i++) {
+        TCAnswerView *answerView = (TCAnswerView *)_answerViews[i];
+        [answerView transformWithQuestion:_model.list[i]];
     }
 }
 @end

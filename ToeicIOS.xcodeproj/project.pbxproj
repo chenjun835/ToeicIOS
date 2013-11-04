@@ -71,7 +71,6 @@
 		77B557D818264F3D00872BEE /* TCCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557D718264F3D00872BEE /* TCCategoryCell.m */; };
 		77B557DC18267E5C00872BEE /* TCOptionRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557DB18267E5C00872BEE /* TCOptionRoundButton.m */; };
 		77B557DF1826910200872BEE /* TCAnswerSheetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557DE1826910200872BEE /* TCAnswerSheetVC.m */; };
-		77B557E21826935D00872BEE /* TCAnswerSheetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557E11826935D00872BEE /* TCAnswerSheetCell.m */; };
 		77B557E81827640900872BEE /* TCAnswerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557E71827640900872BEE /* TCAnswerView.m */; };
 		EE133DA3AF7D483E9B2AB81B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 297D6E0BA9464CE2A86D35A5 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -166,8 +165,6 @@
 		77B557DB18267E5C00872BEE /* TCOptionRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCOptionRoundButton.m; sourceTree = "<group>"; };
 		77B557DD1826910200872BEE /* TCAnswerSheetVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCAnswerSheetVC.h; sourceTree = "<group>"; };
 		77B557DE1826910200872BEE /* TCAnswerSheetVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCAnswerSheetVC.m; sourceTree = "<group>"; };
-		77B557E01826935D00872BEE /* TCAnswerSheetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCAnswerSheetCell.h; sourceTree = "<group>"; };
-		77B557E11826935D00872BEE /* TCAnswerSheetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCAnswerSheetCell.m; sourceTree = "<group>"; };
 		77B557E61827640900872BEE /* TCAnswerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCAnswerView.h; sourceTree = "<group>"; };
 		77B557E71827640900872BEE /* TCAnswerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCAnswerView.m; sourceTree = "<group>"; };
 		9E4B81355E064B879D6B4DF1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -391,8 +388,6 @@
 			children = (
 				77B557D618264F3D00872BEE /* TCCategoryCell.h */,
 				77B557D718264F3D00872BEE /* TCCategoryCell.m */,
-				77B557E01826935D00872BEE /* TCAnswerSheetCell.h */,
-				77B557E11826935D00872BEE /* TCAnswerSheetCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -555,7 +550,6 @@
 				77B557CA1823D88D00872BEE /* TCQuestionBannerView.m in Sources */,
 				77A8DD8D1822816800B41F09 /* TCQuestionListModel.m in Sources */,
 				77A8DD851822660100B41F09 /* TCCategory.m in Sources */,
-				77B557E21826935D00872BEE /* TCAnswerSheetCell.m in Sources */,
 				776C22E518223417000A1227 /* TCAppDelegate.m in Sources */,
 				77B557D818264F3D00872BEE /* TCCategoryCell.m in Sources */,
 				77B557C71823D65600872BEE /* UIView+AutoLayout.m in Sources */,
