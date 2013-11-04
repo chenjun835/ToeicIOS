@@ -9,7 +9,7 @@
 #import "TCQuestionVC.h"
 #import "TCCategory.h"
 #import "TCQuestionListModel.h"
-#import "TCSwipViews.h"
+#import "TCSwipViewVC.h"
 #import "TCDefines.h"
 #import "UIView+AutoLayout.h"
 #import <SVProgressHUD/SVProgressHUD.h>
@@ -57,10 +57,11 @@
 
 - (void)initSubViews{
     [SVProgressHUD dismiss];
-    TCSwipViews *swipeViews = [[TCSwipViews alloc] initWithQuestionList:_model.list];
-    [self.view addSubview:swipeViews];
+    TCSwipViewVC *swipeViewVC = [[TCSwipViewVC alloc] initWithQuestionListModel:_model];
+    [self addChildViewController:swipeViewVC];
+    [self.view addSubview:swipeViewVC.view];
     
-    [swipeViews pinToSuperviewEdgesWithInset:UIEdgeInsetsMake(kDefaultNavigationBarHeight, 0, 0, 0)];
+    [swipeViewVC.view pinToSuperviewEdgesWithInset:UIEdgeInsetsMake(kDefaultNavigationBarHeight, 0, 0, 0)];
 }
 
 @end

@@ -10,6 +10,8 @@
 
 @interface TCOptionRoundButton : UIButton
 
+@property (assign, nonatomic) BOOL isSelected;
+
 - (id)initWithMark:(NSString *)mark;
 - (void)changeState;
 

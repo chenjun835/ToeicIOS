@@ -8,21 +8,17 @@
 
 #import "TCOptionRoundButton.h"
 #import "TCDefines.h"
-
-@interface TCOptionRoundButton ()
-
-@property (assign, nonatomic) BOOL isSelected;
-
-@end
+#import "UIView+AutoLayout.h"
 
 @implementation TCOptionRoundButton
 
 - (id)initWithMark:(NSString *)mark
 {
-    self = [super initWithFrame:CGRectMake(0, 0, 2*kOptionButtonRoundRadius, 2*kOptionButtonRoundRadius)];
+    self = [super init];
     if (self) {
-        _isSelected = NO;
-        self.backgroundColor = [UIColor lightGrayColor];
+        self.translatesAutoresizingMaskIntoConstraints = NO;
+        [self constrainToSize:CGSizeMake(2*kOptionButtonRoundRadius, 2*kOptionButtonRoundRadius)];
+        self.isSelected = NO;
         [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [self.titleLabel setFont:[UIFont boldSystemFontOfSize:13.f]];
         self.layer.cornerRadius = kOptionButtonRoundRadius;
@@ -31,14 +27,18 @@
     return self;
 }
 
-- (void)changeState {
-    _isSelected = !_isSelected;
+- (void)setIsSelected:(BOOL)isSelected {
+    _isSelected = isSelected;
     if (_isSelected) {
         self.backgroundColor = [UIColor greenColor];
     }
     else {
         self.backgroundColor = [UIColor lightGrayColor];
     }
+}
+
+- (void)changeState {
+    self.isSelected = !self.isSelected;
 }
 
 @end

@@ -22,6 +22,7 @@
 
 // Cell
 #define kCategoryCell @"TCCategoryCell"
+#define kAnswerSheetCell @"TCAnswerSheetCell"
 
 // Model
 #define kDefaultListLimit 10
@@ -29,6 +30,9 @@
 // Color
 #define kBackgroundColor       UIColorFromRGB(0xF3F3F3)
 #define kBannerBackgroundColor UIColorFromRGB(0xEEEEEE)
+
+#define kAnswerBackgroundColor1 UIColorFromRGB(0xF0F0F0)
+#define kAnswerBackgroundColor2 UIColorFromRGB(0xE3E3E3)
 
 // View
 #define kDefaultNavigationBarHeight 64.f //set by Apple

@@ -1,52 +1,61 @@
 //
-//  TCSwipViews.m
+//  TCSwipViewVC.m
 //  ToeicIOS
 //
 //  Created by 陳 俊 on 2013/11/01.
 //  Copyright (c) 2013年 陳 俊. All rights reserved.
 //
 
-#import "TCSwipViews.h"
+#import "TCSwipViewVC.h"
 #import "TCQuestionView.h"
 #import "UIView+AutoLayout.h"
+#import "TCAnswerSheetVC.h"
 
-@interface TCSwipViews ()
+@interface TCSwipViewVC ()
 
-@property (strong, nonatomic) NSArray *list;
+@property (strong, nonatomic) TCQuestionListModel *model;
 @property (strong, nonatomic) NSMutableArray *viewList;
 @property (strong, nonatomic) NSArray *currentConstraints;
 @property (strong, nonatomic) UIPageControl *pageControl;
 
 @end
 
-@implementation TCSwipViews
+@implementation TCSwipViewVC
 
-- (id)initWithQuestionList:(NSArray *)list {
+- (id)initWithQuestionListModel:(TCQuestionListModel *)model {
     self = [super init];
     if (self) {
-        _list = list;
+        _model = model;
         
-        [self setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [self.view setTranslatesAutoresizingMaskIntoConstraints:NO];
         
         _pageControl = ({
             UIPageControl *control = [[UIPageControl alloc] init];
             control.translatesAutoresizingMaskIntoConstraints = NO;
-            control.numberOfPages = _list.count;
+            control.numberOfPages = _model.list.count+1; // +1 Add answer sheet view
             control.currentPage = 0;
             control;
         });
         
-        [self addSubview:_pageControl];
+        [self.view addSubview:_pageControl];
         
         [_pageControl pinToSuperviewEdges:JRTViewPinLeftEdge|JRTViewPinRightEdge|JRTViewPinBottomEdge inset:0];
         
         _viewList = [NSMutableArray arrayWithCapacity:_pageControl.numberOfPages];
         for (int page=_pageControl.currentPage; page<_pageControl.numberOfPages; page++) {
-            _viewList[page] = [self questionViewWithPage:page];
+            if (page<_pageControl.numberOfPages-1) {
+                _viewList[page] = [self questionViewWithPage:page];
+            }
+            else {
+                // Answer sheet view
+                TCAnswerSheetVC *answerSheetVC = [[TCAnswerSheetVC alloc] initWithQuestionListModel:_model];
+                [self addChildViewController:answerSheetVC];
+                _viewList[page] = answerSheetVC.view;
+            }
             
-            [self addSubview:_viewList[page]];
-            [_viewList[page] pinAttribute:NSLayoutAttributeWidth toSameAttributeOfView:self];
-            [_viewList[page] pinAttribute:NSLayoutAttributeHeight toSameAttributeOfView:self];
+            [self.view addSubview:_viewList[page]];
+            [_viewList[page] pinAttribute:NSLayoutAttributeWidth toSameAttributeOfView:self.view];
+            [_viewList[page] pinAttribute:NSLayoutAttributeHeight toSameAttributeOfView:self.view];
             [_viewList[page] pinToSuperviewEdges:JRTViewPinTopEdge inset:0.f];
             
             if (page > _pageControl.currentPage) {
@@ -55,6 +64,7 @@
         }
         
         _currentConstraints = [_viewList[_pageControl.currentPage] pinToSuperviewEdges:JRTViewPinLeftEdge inset:0];
+        
     }
     return self;
 }
@@ -62,7 +72,7 @@
 #pragma mark - Private methods
 
 - (TCQuestionView *)questionViewWithPage:(int)page {
-    TCQuestionView *questionView = [[TCQuestionView alloc] initWithQuestion:_list[page] num:page+1 total:_list.count];
+    TCQuestionView *questionView = [[TCQuestionView alloc] initWithQuestion:_model.list[page] num:page+1 total:_model.list.count];
     if (page < (_pageControl.numberOfPages-1)) {
         UISwipeGestureRecognizer *gr = [[UISwipeGestureRecognizer alloc] initWithTarget:self
                                                                                  action:@selector(showNextPage)];
@@ -79,13 +89,13 @@
 }
 
 - (void)swipToPage:(int)toPage {
-    [self removeConstraints:_currentConstraints];
+    [self.view removeConstraints:_currentConstraints];
     _currentConstraints = [_viewList[toPage] pinToSuperviewEdges:JRTViewPinLeftEdge inset:0];
 
     __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:1.f
                      animations:^{
-                         [weakSelf layoutIfNeeded];
+                         [weakSelf.view layoutIfNeeded];
                      }
                      completion:^(BOOL finished) {
                          weakSelf.pageControl.currentPage = toPage;

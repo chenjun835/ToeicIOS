@@ -100,6 +100,7 @@
 - (void)mark:(NSString *)mark changeToState:(BOOL)isSelected {
     if (!isSelected) {
         _selectedMark = nil;
+        _question.userAnswer = nil;
     }
     else {
         if ([_selectedMark isEqualToString:kOptionMarkA]) {
@@ -115,6 +116,7 @@
             [_optionD unSelect];
         }
         _selectedMark = mark;
+        _question.userAnswer = mark;
     }
 }
 
