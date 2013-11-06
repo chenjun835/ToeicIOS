@@ -40,6 +40,14 @@
     [_model loadWithLimit:kDefaultListLimit didLoadBlock:^(NSError *error) {
         [self.tableView reloadData];
     }];
+    
+    if (![PFUser currentUser]) {
+        UIBarButtonItem *loginBtn = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"login", nil)
+                                                                     style:UIBarButtonItemStyleBordered
+                                                                    target:self
+                                                                    action:@selector(gotoLogin)];
+        self.navigationItem.rightBarButtonItem = loginBtn;
+    }
 }
 
 #pragma mark - Table view data source
@@ -68,6 +76,12 @@
 - (void)fetchQuestionsWithCategory:(TCCategory *)category {
     TCQuestionVC *questionVC = [[TCQuestionVC alloc] initWithCategory:category];
     [self.navigationController pushViewController:questionVC animated:YES];
+}
+
+#pragma mark - Private methods 
+
+- (void)gotoLogin {
+    
 }
 
 @end
