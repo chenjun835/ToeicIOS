@@ -13,6 +13,7 @@
 #import "TCDefines.h"
 #import "TCQuestionBannerView.h"
 #import "UIButton+Extension.h"
+#import <BlocksKit/UIAlertView+BlocksKit.h>
 
 @interface TCAnswerSheetVC ()
 
@@ -61,7 +62,7 @@
     
     _answerViews = [[NSMutableArray alloc] initWithCapacity:_model.list.count];
     for (int i=0; i<_model.list.count; i++) {
-        _answerViews[i] = [[TCAnswerView alloc] initWithQuestion:_model.list[i] num:i+1];
+        _answerViews[i] = [[TCAnswerView alloc] initWithNum:i+1];
         [self.view addSubview:_answerViews[i]];
     }
     for (int i=0; i<_answerViews.count; i++) {
@@ -88,13 +89,7 @@
     [submitButton centerInContainerOnAxis:NSLayoutAttributeCenterX];
     [submitButton pinEdge:NSLayoutAttributeTop toEdge:NSLayoutAttributeBottom ofItem:_answerViews.lastObject inset:kPadding];
     [submitButton constrainToHeight:44];
-}
-
-- (void)transformAnswerSheet {
-    for (int i=0; i<_answerViews.count; i++) {
-        TCAnswerView *answerView = (TCAnswerView *)_answerViews[i];
-        [answerView transformWithQuestion:_model.list[i]];
-    }
+    [submitButton addTarget:self action:@selector(checkAnswer) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)questionAnswered:(NSNotification *)notification {
@@ -105,6 +100,29 @@
     answerView.userAnswer = answer;
     
     ((TCQuestion *)_model.list[num-1]).userAnswer = answer;
+}
+
+#pragma mark - Private methods
+
+- (void)checkAnswer {
+    if ([_model isAllAnswered]) {
+        [self gotoResultPage];
+    }
+    else {
+       // [UIAlertView showAlertViewWithTitle:@"test" message:@"tet" cancelButtonTitle:@"ddk" otherButtonTitles:nil handler:nil];
+//        UIAlertView *notAllAnsweredAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"You have not answered all questions!", nil)
+//                                                                      message:NSLocalizedString(@"We strongly recommend you answer all question", nil)];
+//        //[notAllAnsweredAlert setCancelButtonWithTitle:NSLocalizedString(@"Cancel", nil) handler:nil];
+//        __weak typeof(self) weakSelf = self;
+//        [notAllAnsweredAlert addButtonWithTitle:NSLocalizedString(@"Check Answer", nil) handler:^{
+//            [weakSelf gotoResultPage];
+//        }];
+//        [notAllAnsweredAlert show];
+    }
+}
+
+- (void)gotoResultPage {
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end

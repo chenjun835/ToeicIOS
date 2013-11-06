@@ -53,4 +53,14 @@
     }];
 }
 
+- (BOOL)isAllAnswered {
+    for (int i=0; i<self.list.count; i++) {
+        TCQuestion *question = (TCQuestion *)self.list[i];
+        if (question.userAnswer == nil) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
 @end

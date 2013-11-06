@@ -18,6 +18,7 @@
 @property (retain) NSString *optionB;
 @property (retain) NSString *optionC;
 @property (retain) NSString *optionD;
+@property (retain) NSString *answer;
 @property (retain) TCCategory *category;
 
 // Data in Client

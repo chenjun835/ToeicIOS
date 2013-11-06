@@ -24,7 +24,7 @@
 
 @implementation TCAnswerView
 
-- (id)initWithQuestion:(TCQuestion *)question num:(int)num {
+- (id)initWithNum:(int)num {
     self = [super init];
     if (self) {
         self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -55,14 +55,8 @@
                                                                      metrics:metrics
                                                                        views:views]];
         [_numLabel pinToSuperviewEdges:JRTViewPinTopEdge|JRTViewPinBottomEdge inset:3];
-        
-        [self transformWithQuestion:question];
     }
     return self;
-}
-
-- (void)transformWithQuestion:(TCQuestion *)question {
-    [self transformWithUserAnswer:question.userAnswer];
 }
 
 - (void)setUserAnswer:(NSString *)userAnswer {

@@ -18,6 +18,9 @@
 @dynamic optionC;
 @dynamic optionD;
 @dynamic category;
+@dynamic answer;
+
+// Data in Client
 @dynamic userAnswer;
 
 + (NSString *)parseClassName {

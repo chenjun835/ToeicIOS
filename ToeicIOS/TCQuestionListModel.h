@@ -12,5 +12,6 @@
 @interface TCQuestionListModel : TCListModel
 
 - (id)initWithCategory:(TCCategory *)category;
+- (BOOL)isAllAnswered;
 
 @end
