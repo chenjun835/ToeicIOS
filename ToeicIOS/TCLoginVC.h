@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol TCLoginVCDelegate <NSObject>
+
+- (void)loginSuccessed;
+- (void)loginFailed;
+
+@end
+
 @interface TCLoginVC : UIViewController
+
+@property (weak, nonatomic) id<TCLoginVCDelegate> delegate;
 
 @end

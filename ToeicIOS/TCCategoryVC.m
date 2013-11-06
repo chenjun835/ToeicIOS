@@ -14,7 +14,7 @@
 #import "TCCategoryCell.h"
 #import "TCLoginVC.h"
 
-@interface TCCategoryVC () <TCCategoryCellDelegate>
+@interface TCCategoryVC () <TCCategoryCellDelegate, TCLoginVCDelegate>
 
 @property (nonatomic, strong) TCCategoryListModel *model;
 
@@ -43,11 +43,9 @@
     }];
     
     if (![PFUser currentUser]) {
-        UIBarButtonItem *loginBtn = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"login", nil)
-                                                                     style:UIBarButtonItemStyleBordered
-                                                                    target:self
-                                                                    action:@selector(gotoLogin)];
-        self.navigationItem.rightBarButtonItem = loginBtn;
+        [self setLoginBtn];
+    } else {
+        [self setUserBtn];
     }
 }
 
@@ -79,11 +77,43 @@
     [self.navigationController pushViewController:questionVC animated:YES];
 }
 
+#pragma mark - TCLoginVCDelegate
+
+- (void)loginSuccessed {
+    [self setUserBtn];
+}
+
+- (void)loginFailed {
+    [self setLoginBtn];
+}
+
 #pragma mark - Private methods 
 
-- (void)gotoLogin {
+- (void)login {
     TCLoginVC *loginVC = [[TCLoginVC alloc] init];
+    loginVC.delegate = self;
     [self.navigationController pushViewController:loginVC animated:YES];
 }
 
+- (void)logout {
+    [PFUser logOut];
+    [self setLoginBtn];
+}
+
+- (void)setLoginBtn {
+    UIBarButtonItem *loginBtn = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"login", nil)
+                                                                 style:UIBarButtonItemStyleBordered
+                                                                target:self
+                                                                action:@selector(login)];
+    self.navigationItem.rightBarButtonItem = loginBtn;
+}
+
+- (void)setUserBtn {
+    UIBarButtonItem *userBtn = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"logout", nil)
+                                                                style:UIBarButtonItemStyleBordered
+                                                               target:self
+                                                               action:@selector(logout)];
+    self.navigationItem.rightBarButtonItem = userBtn;
+}
+     
 @end
