@@ -73,6 +73,11 @@
 		77B557DF1826910200872BEE /* TCAnswerSheetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557DE1826910200872BEE /* TCAnswerSheetVC.m */; };
 		77B557E81827640900872BEE /* TCAnswerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557E71827640900872BEE /* TCAnswerView.m */; };
 		77B557EC182A224100872BEE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77B557EB182A224100872BEE /* FacebookSDK.framework */; };
+		77B557EF182A3C7B00872BEE /* TCLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557EE182A3C7B00872BEE /* TCLoginVC.m */; };
+		77B557F5182A60E600872BEE /* fb-login-btn-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 77B557F1182A60E600872BEE /* fb-login-btn-pressed.png */; };
+		77B557F6182A60E600872BEE /* fb-login-btn-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77B557F2182A60E600872BEE /* fb-login-btn-pressed@2x.png */; };
+		77B557F7182A60E600872BEE /* fb-login-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 77B557F3182A60E600872BEE /* fb-login-btn.png */; };
+		77B557F8182A60E600872BEE /* fb-login-btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77B557F4182A60E600872BEE /* fb-login-btn@2x.png */; };
 		EE133DA3AF7D483E9B2AB81B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 297D6E0BA9464CE2A86D35A5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -169,6 +174,12 @@
 		77B557E61827640900872BEE /* TCAnswerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCAnswerView.h; sourceTree = "<group>"; };
 		77B557E71827640900872BEE /* TCAnswerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCAnswerView.m; sourceTree = "<group>"; };
 		77B557EB182A224100872BEE /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = "../facebook-ios-sdk/build/FacebookSDK.framework"; sourceTree = "<group>"; };
+		77B557ED182A3C7B00872BEE /* TCLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCLoginVC.h; sourceTree = "<group>"; };
+		77B557EE182A3C7B00872BEE /* TCLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCLoginVC.m; sourceTree = "<group>"; };
+		77B557F1182A60E600872BEE /* fb-login-btn-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fb-login-btn-pressed.png"; sourceTree = "<group>"; };
+		77B557F2182A60E600872BEE /* fb-login-btn-pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fb-login-btn-pressed@2x.png"; sourceTree = "<group>"; };
+		77B557F3182A60E600872BEE /* fb-login-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fb-login-btn.png"; sourceTree = "<group>"; };
+		77B557F4182A60E600872BEE /* fb-login-btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fb-login-btn@2x.png"; sourceTree = "<group>"; };
 		9E4B81355E064B879D6B4DF1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -280,6 +291,7 @@
 				776C22E418223417000A1227 /* TCAppDelegate.m */,
 				776C22F518223417000A1227 /* Images.xcassets */,
 				776C22EC18223417000A1227 /* ToeicIOS.xcdatamodeld */,
+				77B557F0182A607800872BEE /* images */,
 				776C22DB18223417000A1227 /* Supporting Files */,
 			);
 			path = ToeicIOS;
@@ -343,6 +355,8 @@
 				77B557B51823A38800872BEE /* TCQuestionVC.m */,
 				77B557DD1826910200872BEE /* TCAnswerSheetVC.h */,
 				77B557DE1826910200872BEE /* TCAnswerSheetVC.m */,
+				77B557ED182A3C7B00872BEE /* TCLoginVC.h */,
+				77B557EE182A3C7B00872BEE /* TCLoginVC.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -403,6 +417,17 @@
 				77B557DB18267E5C00872BEE /* TCOptionRoundButton.m */,
 			);
 			name = common;
+			sourceTree = "<group>";
+		};
+		77B557F0182A607800872BEE /* images */ = {
+			isa = PBXGroup;
+			children = (
+				77B557F1182A60E600872BEE /* fb-login-btn-pressed.png */,
+				77B557F2182A60E600872BEE /* fb-login-btn-pressed@2x.png */,
+				77B557F3182A60E600872BEE /* fb-login-btn.png */,
+				77B557F4182A60E600872BEE /* fb-login-btn@2x.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -487,8 +512,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77B557F6182A60E600872BEE /* fb-login-btn-pressed@2x.png in Resources */,
+				77B557F7182A60E600872BEE /* fb-login-btn.png in Resources */,
+				77B557F5182A60E600872BEE /* fb-login-btn-pressed.png in Resources */,
 				77A8DD7118225EDB00B41F09 /* Localizable.strings in Resources */,
 				776C22F618223417000A1227 /* Images.xcassets in Resources */,
+				77B557F8182A60E600872BEE /* fb-login-btn@2x.png in Resources */,
 				776C22DF18223417000A1227 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,6 +592,7 @@
 				77B557CD1824EEBB00872BEE /* UIColor+Extension.m in Sources */,
 				77A8DD8918227F5A00B41F09 /* TCQuestion.m in Sources */,
 				77B557B61823A38800872BEE /* TCCategoryVC.m in Sources */,
+				77B557EF182A3C7B00872BEE /* TCLoginVC.m in Sources */,
 				77B557C41823CC2900872BEE /* TCSwipViewVC.m in Sources */,
 				77B557B71823A38800872BEE /* TCQuestionVC.m in Sources */,
 			);

@@ -12,6 +12,7 @@
 #import "TCQuestionVC.h"
 #import "TCDefines.h"
 #import "TCCategoryCell.h"
+#import "TCLoginVC.h"
 
 @interface TCCategoryVC () <TCCategoryCellDelegate>
 
@@ -81,7 +82,8 @@
 #pragma mark - Private methods 
 
 - (void)gotoLogin {
-    
+    TCLoginVC *loginVC = [[TCLoginVC alloc] init];
+    [self.navigationController pushViewController:loginVC animated:YES];
 }
 
 @end
