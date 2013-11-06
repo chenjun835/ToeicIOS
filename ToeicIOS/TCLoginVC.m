@@ -49,12 +49,25 @@
         btn;
     });
     
+    UIButton *twitterBtn = ({
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        btn.backgroundColor = [UIColor greenColor];
+        btn.translatesAutoresizingMaskIntoConstraints = NO;
+        [btn setTitle:@"twitter login" forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(twitterLogin) forControlEvents:UIControlEventTouchUpInside];
+        btn;
+    });
+
+    
     [self.view addSubview:_activityIndicator];
     [self.view addSubview:fbBtn];
+    [self.view addSubview:twitterBtn];
     
     [fbBtn centerInView:self.view];
     [_activityIndicator pinEdge:NSLayoutAttributeBottom toEdge:NSLayoutAttributeTop ofItem:fbBtn];
     [_activityIndicator pinAttribute:NSLayoutAttributeCenterX toSameAttributeOfView:fbBtn];
+    [twitterBtn pinEdge:NSLayoutAttributeTop toEdge:NSLayoutAttributeBottom ofItem:fbBtn];
+    [twitterBtn pinAttribute:NSLayoutAttributeCenterX toSameAttributeOfView:fbBtn];
 }
 
 - (void)didReceiveMemoryWarning
@@ -84,21 +97,38 @@
             }
         } else if (user.isNew) {
             NSLog(@"User with facebook signed up and logged in!");
-            if ([_delegate respondsToSelector:@selector(loginSuccessed)]) {
-                [_delegate loginSuccessed];
-            }
-            [self.navigationController popViewControllerAnimated:YES];
+            [self loginSuccessed];
         } else {
             NSLog(@"User with facebook logged in!");
-            if ([_delegate respondsToSelector:@selector(loginSuccessed)]) {
-                [_delegate loginSuccessed];
-            }
-            [self.navigationController popViewControllerAnimated:YES];
+            [self loginSuccessed];
         }
     }];
     
     [_activityIndicator startAnimating]; // Show loading indicator until login is finished
 }
 
+//
+- (void)twitterLogin {
+    [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
+        if (!user) {
+            NSLog(@"Uh oh. The user cancelled the Twitter login.");
+            return;
+        } else if (user.isNew) {
+            NSLog(@"User signed up and logged in with Twitter!");
+            [self loginSuccessed];
+        } else {
+            NSLog(@"User logged in with Twitter!");
+            [self loginSuccessed];
+        }
+    }];
+}
 
+#pragma mark - Private methods
+
+- (void)loginSuccessed {
+    if ([_delegate respondsToSelector:@selector(loginSuccessed)]) {
+        [_delegate loginSuccessed];
+    }
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

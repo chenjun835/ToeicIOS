@@ -19,6 +19,9 @@
 // Parse
 #define kParseApplicationId @"teKBUtsKIayWc3H9OYv77SIHSujiPZZQNRluCF6w"
 #define kParseClientKey     @"TQYBAAEEqnuuuTJhOd46oXeFuErQGKhkrhpWbkAl" 
+// Twitter
+#define kTwitterConsumerKey @"bqRsgxTNVD8oWjuR1OZn4A"
+#define kTwitterSecret      @"oofXQOv2DYnDPuWPpuy4s1gZ48CSTJ4jhTtRjWz00"
 
 // Class name
 #define kClassNameCategory @"TCCategory"

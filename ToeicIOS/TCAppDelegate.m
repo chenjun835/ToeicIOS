@@ -27,6 +27,8 @@
     [Parse setApplicationId:kParseApplicationId
                   clientKey:kParseClientKey];
     [PFFacebookUtils initializeFacebook];
+    [PFTwitterUtils initializeWithConsumerKey:kTwitterConsumerKey
+                               consumerSecret:kTwitterSecret];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
