@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "_default": {
+            "link": "toeic"
+        }, 
+        "toeic": {
+            "applicationId": "teKBUtsKIayWc3H9OYv77SIHSujiPZZQNRluCF6w", 
+            "masterKey": "fVTTgUpsTYEa7B8EiiMCvn2xl7mb5YSpFtRYPY98"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.12"
+    }
+}
