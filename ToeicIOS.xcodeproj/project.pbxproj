@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7757CC11196A82A700E6463E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7757CC10196A82A700E6463E /* FacebookSDK.framework */; };
 		776C22D318223417000A1227 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 776C22D218223417000A1227 /* Foundation.framework */; };
 		776C22D518223417000A1227 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 776C22D418223417000A1227 /* CoreGraphics.framework */; };
 		776C22D718223417000A1227 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 776C22D618223417000A1227 /* UIKit.framework */; };
@@ -72,7 +73,6 @@
 		77B557DC18267E5C00872BEE /* TCOptionRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557DB18267E5C00872BEE /* TCOptionRoundButton.m */; };
 		77B557DF1826910200872BEE /* TCAnswerSheetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557DE1826910200872BEE /* TCAnswerSheetVC.m */; };
 		77B557E81827640900872BEE /* TCAnswerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557E71827640900872BEE /* TCAnswerView.m */; };
-		77B557EC182A224100872BEE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77B557EB182A224100872BEE /* FacebookSDK.framework */; };
 		77B557EF182A3C7B00872BEE /* TCLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B557EE182A3C7B00872BEE /* TCLoginVC.m */; };
 		77B557F5182A60E600872BEE /* fb-login-btn-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 77B557F1182A60E600872BEE /* fb-login-btn-pressed.png */; };
 		77B557F6182A60E600872BEE /* fb-login-btn-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77B557F2182A60E600872BEE /* fb-login-btn-pressed@2x.png */; };
@@ -93,6 +93,7 @@
 
 /* Begin PBXFileReference section */
 		297D6E0BA9464CE2A86D35A5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7757CC10196A82A700E6463E /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		776C22CF18223417000A1227 /* ToeicIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToeicIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		776C22D218223417000A1227 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		776C22D418223417000A1227 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -188,6 +189,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7757CC11196A82A700E6463E /* FacebookSDK.framework in Frameworks */,
 				77A8DD5C1822558000B41F09 /* libsqlite3.0.dylib in Frameworks */,
 				776C232B182250BF000A1227 /* SystemConfiguration.framework in Frameworks */,
 				776C2329182250B4000A1227 /* StoreKit.framework in Frameworks */,
@@ -196,7 +198,6 @@
 				776C23231822508C000A1227 /* MobileCoreServices.framework in Frameworks */,
 				77A8DD5F1822575200B41F09 /* Parse.framework in Frameworks */,
 				776C23211822507F000A1227 /* libz.1.1.3.dylib in Frameworks */,
-				77B557EC182A224100872BEE /* FacebookSDK.framework in Frameworks */,
 				776C231F18225073000A1227 /* CoreLocation.framework in Frameworks */,
 				776C22D518223417000A1227 /* CoreGraphics.framework in Frameworks */,
 				776C231D1822505E000A1227 /* CFNetwork.framework in Frameworks */,
@@ -257,6 +258,7 @@
 		776C22D118223417000A1227 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7757CC10196A82A700E6463E /* FacebookSDK.framework */,
 				77B557EB182A224100872BEE /* FacebookSDK.framework */,
 				77A8DD5E1822575200B41F09 /* Parse.framework */,
 				77A8DD5B1822558000B41F09 /* libsqlite3.0.dylib */,
@@ -744,6 +746,7 @@
 					"$(inherited)",
 					/Users/jun.chen/Desktop/ToeicIOS,
 					"/Users/jun.chen/Desktop/facebook-ios-sdk/build",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ToeicIOS/ToeicIOS-Prefix.pch";
@@ -790,6 +793,7 @@
 					"$(inherited)",
 					/Users/jun.chen/Desktop/ToeicIOS,
 					"/Users/jun.chen/Desktop/facebook-ios-sdk/build",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ToeicIOS/ToeicIOS-Prefix.pch";
