@@ -742,6 +742,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 俊 陳 (AETKUWC8EP)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/jun.chen/Desktop/ToeicIOS,
@@ -779,6 +780,7 @@
 					AdSupport,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8FA793CC-FB28-4492-B045-0737EE874C83";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -826,6 +828,7 @@
 					AdSupport,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8FA793CC-FB28-4492-B045-0737EE874C83";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -8,7 +8,7 @@
 
 "TOEIC" = "TOEIC";
 
-"get 10 questions" = "10個くれ";
+"get 10 questions" = "　練習　";
 "fetch questions for your situation" = "あなたのレベルに従って出題中";
 "fetch questions failed" = "出題失敗しました";
 "login" = "ログイン";
